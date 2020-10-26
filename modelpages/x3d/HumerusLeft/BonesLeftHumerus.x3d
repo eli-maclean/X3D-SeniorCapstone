@@ -13,13 +13,17 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-  <Viewpoint
-    position='0.2 1.25 8.0'
-    orientation='0.0 0.0 1.0 0.0'
-    fieldOfView='0.1'
-    description='Entry View'/>
+	<!--
+	<Shape>
+		<Sphere radius='2.3'/>
+			<Appearance>
+			<Material diffuseColor='1.0 0.0 0.0'/>
+			</Appearance>
+	</Shape>
+	-->	
+	<Viewpoint position='1 0 25.0' orientation='0.0 0.0 1.0 0.0' description='Entry View'/>
     <WorldInfo title='BonesLeftHumerus.x3d'/>
-    <Transform DEF='DSkeletonParts' scale='0.029 0.029 0.029'>
+    <Transform DEF='DSkeletonParts' translation='-7.0 -43.0 1.5'>
       <Group DEF='LeftArm'>
         <!-- lhumrus -->
         <Shape DEF='lhumrus'>
