@@ -14,7 +14,17 @@
 				  <li><a href="http://web-students.armstrong.edu/~em07614/test/3dmodels.php">Home</a></li> 
 				</ul>
 			</nav>
-		<div class="center">
+		<div class="centerbrain">
+		<div class="topbar">
+				<h2>Mouse Controls:</h2>
+				<table id="mouseTable">
+					<tr id="mouseLeftRow"><td><img src="MouseImages/Mouse_Left.png"></img></td><td id="mouseLeft">Rotate</td>
+					<td><img src="MouseImages/Mouse_Right.png"></img></td><td id="mouseRight">X.ITE Browser</td>
+					<td><img src="MouseImages/Mouse_Wheel_Scroll.png"></img></td><td id="mouseWheelScroll">Zoom</td>
+					<td><img src="MouseImages/Mouse_Wheel_Press.png"></img></td><td id="mouseWheelPress">Pan</td></tr>
+
+				</table>
+			</div>
 			<div class="sidebar">
 				<h2>Brain (anterior aspect):</h2>
 				<p>Explode all button and sliders not working(Work-in-Progress)</p>
@@ -93,7 +103,7 @@
 				</div>
 			</div>
 			<div class="maxwrap">
-				<div class="x3d">					
+				<div class="x3dbrain">					
 					<x3d id="skullScene">
 						<scene onload="onLoad()">
 							<Background skyColor='(.067,.067,.067)'></Background>

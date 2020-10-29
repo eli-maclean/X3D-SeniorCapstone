@@ -15,7 +15,16 @@
 				</ul>
 			</nav>
 		<div class="center">
-			
+			<div class="topbar">
+				<h2>Mouse Controls:</h2>
+				<table id="mouseTable">
+					<tr id="mouseLeftRow"><td><img src="MouseImages/Mouse_Left.png"></img></td><td id="mouseLeft">Rotate</td>
+					<td><img src="MouseImages/Mouse_Right.png"></img></td><td id="mouseRight">X.ITE Browser</td>
+					<td><img src="MouseImages/Mouse_Wheel_Scroll.png"></img></td><td id="mouseWheelScroll">Zoom</td>
+					<td><img src="MouseImages/Mouse_Wheel_Press.png"></img></td><td id="mouseWheelPress">Pan</td></tr>
+
+				</table>
+			</div>
 			<div class="sidebar">
 				<h2>SKULL (anterior aspect):</h2>
 				<center><input type="button" id="explode" onclick="modAll(100, false)" value="Explode All"><input type="button" id="reset" onclick="modAll(0, true)" value="Reset All"><input type="button" id="reset" onclick="disableAll(-1)" value="Disable All"></center>
@@ -109,7 +118,7 @@
 					<input type="range"  name="slider" min="0" max="100" value="0" class="slider" id="occipitalSlider" onchange="updateOccipital()" class="slider">
 					<label id="occipitalPercentage" class="percentage">0%</label>
 				</div>
-				<h3>NotLabeled??(1)</h3>
+				<h3>Ethmoid</h3>
 				<div class="ctGuts">
 					<input type="checkbox" name="enabler" id="slider2Boolean" onchange="updateSlider2()" value="enabled" checked>
 					<label for="slider2Boolean">Enabled</label>
@@ -118,7 +127,7 @@
 					<input type="range"  name="slider" min="0" max="100" value="0" class="slider" id="slider2Slider" onchange="updateSlider2()" class="slider">
 					<label id="slider2Percentage" class="percentage">0%</label>
 				</div>
-				<h3>NotLabeled??(2)</h3>
+				<h3>Vomer</h3>
 				<div class="ctGuts">
 					<input type="checkbox" name="enabler" id="slider22Boolean" onchange="updateSlider22()" value="enabled" checked>
 					<label for="slider22Boolean">Enabled</label>
@@ -127,7 +136,7 @@
 					<input type="range"  name="slider" min="0" max="100" value="0" class="slider" id="slider22Slider" onchange="updateSlider22()" class="slider">
 					<label id="slider22Percentage" class="percentage">0%</label>
 				</div>
-				<h3>NotLabeled??(3)</h3>
+				<h3>Palatine</h3>
 				<div class="ctGuts">
 					<input type="checkbox" name="enabler" id="slider21Boolean" onchange="updateSlider21()" value="enabled" checked>
 					<label for="slider21Boolean">Enabled</label>
@@ -138,7 +147,7 @@
 				</div>
 			</div>
 			<div class="maxwrap">
-				<div class="x3d">
+				<div class="x3dskull">
 					<x3d id="skullScene">
 						<scene onload="onLoad()">
 							<Background skyColor='(.067,.067,.067)'></Background> 
