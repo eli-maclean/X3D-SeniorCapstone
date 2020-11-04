@@ -57,7 +57,7 @@ $db_handle = new DBController();
 														foreach($product_array as $key=>$value){
 															if ($product_array [$key]["type"]=="basic"){?>
                                                                     <div class="cell">
-                                                                    <div class="thumbnail"><a href="basic2.php"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
+                                                                    <div class="thumbnail"><a href="modelpages\basic2.php"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
                                                                     <div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
 													</div><?php}
 				                                            }
