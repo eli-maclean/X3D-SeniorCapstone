@@ -13,8 +13,7 @@ $db_handle = new DBController();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body class="scrolling">
-	
-<center>
+        <center>
             <table class=mpf>
                 <tr>
                     <td style="border: 0px solid #FFFFFF;">
@@ -40,6 +39,7 @@ $db_handle = new DBController();
                                     </td>
                                 </tr>
                             </table>
+                        </center>
 							
               <center>
                         <h2 style="color: white;">Basic Models</h2>
@@ -55,21 +55,15 @@ $db_handle = new DBController();
 												$product_array = $db_handle->runQuery("SELECT * FROM models");
 													if (!empty($product_array)) {
 														foreach($product_array as $key=>$value){
-															if ($product_array [$key]["type"]=="basic"){
-											?>
-											
-													<div class="cell">
-													<div class="thumbnail"><a href="<?php echo $product_array[$key]["adr"]; ?>"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
-													<div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
-													</div>
-											<?php
-					}
-				}
-			}
-			?>
-								</div>
-										
-								</table>
+															if ($product_array [$key]["type"]=="basic"){?>
+                                                                    <div class="cell">
+                                                                    <div class="thumbnail"><a href="basic2.php"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
+                                                                    <div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
+													</div><?php}
+				                                            }
+			                                            }?>
+								            </div>
+                            </table>
                         </center>
                         <br/>
                         <center>
@@ -91,6 +85,7 @@ $db_handle = new DBController();
                 </td>
             </tr>
         </table>
+        <p><?php echo print_r($product_array)?>
     </center>
     <br/>	
 	</body>
