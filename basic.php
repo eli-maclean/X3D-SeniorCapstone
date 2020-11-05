@@ -34,6 +34,43 @@ $db_handle = new DBController();
                                                     <td class=wrs><a class=wrf href=basic.php>Basic</a></td>
                                                     <td class=wrf><a class=wrf href=decomposable.php>Decomposable</a></td>
                                                     <td class=wrf><a class=wrf href=volume.php>Volume</a></td>
+                                                    <div class="dropdown">
+				                                        <button class="dropbtn" onclick="myFunction()" title="Hold Ctrl+Click to open new tab for models in list">Basic Models
+					                                        <i class="fa fa-caret-down"></i>
+				                                        </button>
+				                                        <div class="dropdown-content" id="myDropdown">
+					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/bodyskin.html">Body Skin</a>
+					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/chest.html">Chest</a>
+					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/femur_left.html">Left Femur</a>
+					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/femur_right.html">Right Femur</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/foot_left.html">Left Foot</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/foot_right.html">Right Foot</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/girdle.html">Girdle</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/hand_left.html">Left Hand</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/hand_right.html">Right Hand</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/head.html">Head</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/humerus_left.html">Left Humerus</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/humerus_right.html">Right Humerus</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/radiusUlna_left.html">Left Radius/Ulna</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/radiusUlna_right.html">Right Radius/Ulna</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/skeleton.html">Skeleton</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/teeth.html">Teeth</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/tibiaFibula_left.html">Left Tibia/Fibula</a>
+                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/tibiaFibula_right.html">Right Tibia/Fibula</a>
+                                                        </div>
+                                                     <script>
+                                                        function myFunction() {
+                                                            document.getElementById("myDropdown").classList.toggle("show");
+                                                        }
+                                                        window.onclick = function(e) {
+                                                            if (!e.target.matches('.dropbtn')) {
+                                                            var myDropdown = document.getElementById("myDropdown");
+                                                                if (myDropdown.classList.contains('show')) {
+                                                                myDropdown.classList.remove('show');
+                                                                }
+                                                            }
+                                                        }
+                                                    </script>
                                                 </tr>
                                             </table>
                                         </center>
