@@ -13,8 +13,7 @@ $db_handle = new DBController();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body class="scrolling">
-	
-<center>
+        <center>
             <table class=mpf>
                 <tr>
                     <td style="border: 0px solid #FFFFFF;">
@@ -40,45 +39,44 @@ $db_handle = new DBController();
                                     </td>
                                 </tr>
                             </table>
-							
-              <center>
-                        <h2 style="color: white;">Basic Models</h2>
-                        <hr>
-                        <table style="width:77%"> 
-							<table style="width:80%"> 
-									<tr>
-										
-											<center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
-											
-											
-											<div class="allcategories"><?php
-												$product_array = $db_handle->runQuery("SELECT * FROM models");
-													if (!empty($product_array)) {
-														foreach($product_array as $key=>$value){
-															if ($product_array [$key]["type"]=="basic"){
-											?>
-											
-													<div class="cell">
-													<div class="thumbnail"><a href="<?php echo $product_array[$key]["adr"]; ?>"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
-													<div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
-													</div>
-											<?php
-					}
-				}
-			}
-			?>
-								</div>
-										
-								</table>
+                        </center>							
+                        <center>
+                            <h2 style="color: white;">Basic Models</h2>
+                            <hr>
+                                <table style="width:80%"> <!--model grid-->
+                                    <tr>
+                                        <center><h3 style="color: white;"><i>Please choose from the list below</i></h3><center>
+                                        <div class="allcategories">
+                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
+                                                if (!empty($product_array)) {
+                                                    foreach($product_array as $key=>$value){
+                                                        if ($product_array [$key]["type"]=="basic"){
+                                                            ?><div class="cell">
+                                                                <div class="thumbnail">
+                                                                    <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
+                                                                </div>
+                                                                <div class="titlename">
+                                                                    <form action="modelpages/basic2.php" method = "get">
+                                                                        <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                        <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                    </form>
+                                                                </div>
+                                                            </div><?php
+                                                                                            }
+                                                                                        }
+                                                                                    }?>
+                                        </div>
+                                    </tr>
+                                </table>
                         </center>
                         <br/>
                         <center>
-                            <table class=title>
+                            <table class=title><!--Signature Bar -->
                                 <tr>
                                     <td style="border: 5px solid #FFFFFF;">
                                         <center>
-                                            <i>
-                                                <div style="margin-bottom: 12px">@ 2020 Prof. Felix G. Hamza-Lup</i>
+                                                <div style="margin-bottom: 12px">
+                                                    <i>@ 2020 Prof. Felix G. Hamza-Lup</i>
                                                     <img style="position: relative; top: 6.5px;" src=thumbnails/team/gslo.png></img>
                                                 </div>
                                         </center>
@@ -87,11 +85,13 @@ $db_handle = new DBController();
                             </table>
                         </center>    
                         <br/>
-                    </center>
-                </td>
-            </tr>
-        </table>
-    </center>
-    <br/>	
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <br/>
+       <pre>
+            <?php echo print_r($product_array)	?>
+        </pre>
 	</body>
 </html>
