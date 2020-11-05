@@ -44,6 +44,13 @@ h3 {
 }
 
 h4 {
+	color: #36414e;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	text-align: center
+} 
+
+h4 {
 	color: white;
 	font-family: sans-serif;
 }
@@ -77,6 +84,11 @@ table.mpg {
 	border: 0px solid #FFFFFF;
 	width: 60%;
 	background-color: #60acdb;
+}
+
+table.mouseTable{
+	background-color: #222;
+	border: 0px
 }
 
 table.mpf { 
@@ -214,4 +226,116 @@ button.fake:hover {
 .cc img {
 	width: 125%;
     height: 125%;
+}
+
+.center {
+	margin: auto;
+	padding: 10px;
+	border: 0px solid black;
+	overflow: hidden;
+	height: 700px;
+	width: 1000px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	background: #222;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+}
+
+.centerbrain {
+	margin: auto;
+	padding: 10px;
+	padding-bottom: 100px;
+	border: 1px solid black;
+	overflow: hidden;
+	width: 1300px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	background: #222;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+}
+
+
+.maxwrap {
+	float: left;
+	margin: auto;
+	width: 500px;
+	height: 500px;
+}
+
+.slider {
+	margin-right: 20px;
+	width: 75%;
+}
+
+.sidebar {
+	float: right;
+	color: #DDD;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 300px;
+	position: static;
+	display: block;
+}
+.topbar {
+	float: top;
+	color: #DDD;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 300px;
+	position: absolute;
+	display: block;
+	left: 14%;
+}
+
+.percentage {
+	position: absolute;
+	padding: 2px;
+	margin-top: 4px;
+}
+
+.ctGuts {
+	position:relative;
+	background-color: #333;
+	padding: 5px;
+}
+
+.x3d {
+    float: left;
+	overflow: hidden;
+	border: 1px solid black;
+	padding-top: 25 px;
+	display: block;
+	position: absolute;
+	top: 50%; left: 43%;
+	transform: translate(-57%,-50%);
+}
+
+.x3dbrain {
+    float: left;
+	overflow: hidden;
+	border: 1px solid black;
+	padding-top: 25 px;
+	display: block;
+	position: absolute;
+	top: 57%; left: 43%;
+	transform: translate(-57%,-50%);
+}
+
+#skullScene {
+	position: relative;
+	border: 1px solid white;
+	width: 900px;
+	height: 700px;
+}
+
+.x3dbasic {
+    float: left;
+	overflow: hidden;
+	border: 1px solid black;
+	padding: 25 px;
+	display: block;
+	position: absolute;
+	top: 61%; left: 55%;
+	transform: translate(-57%,-50%);
+	border-radius: 10px 10px 10px 10px;
 }
