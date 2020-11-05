@@ -39,39 +39,34 @@ $db_handle = new DBController();
                                     </td>
                                 </tr>
                             </table>
-                        </center>
-							
-              <center>
-                        <h2 style="color: white;">Basic Models</h2>
-                        <hr>
-                        <table style="width:77%"> 
-							<table style="width:80%"> 
-									<tr>
-										
-											<center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
-											
-											
-											<div class="allcategories"><?php
-												$product_array = $db_handle->runQuery("SELECT * FROM models");
-													if (!empty($product_array)) {
-														foreach($product_array as $key=>$value){
-															if ($product_array [$key]["type"]=="basic"){?>
-                                                                    <div class="cell">
-                                                                    <div class="thumbnail"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></div>
-                                                                    <div class="titlename">
-                                                                        <form action="modelpages/test.php" method = "get">
-                                                                            <input type="text" name="name" value="<?php echo $product_array[$key]["name"]; ?>" readonly>
-                                                                            <input type="text" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>" readonly>
-                                                                            <input type="submit" value="Go">
-                                                                        </form>
-                                                                    </div>
-                                                    </div>
-                                                    <?php
-                                                                                                            }
-				                                                                                    }
-                                                                                    }
-                                                        ?>
-								            </div>
+                        </center>							
+                        <center>
+                            <h2 style="color: white;">Basic Models</h2>
+                            <hr>
+                            <table style="width:77%"> 
+                                <table style="width:80%"> 
+                                    <tr>
+                                        <center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
+                                        <div class="allcategories">
+                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models");
+                                                if (!empty($product_array)) {
+                                                    foreach($product_array as $key=>$value){
+                                                        if ($product_array [$key]["type"]=="basic"){
+                                                            ?><div class="cell">
+                                                                <div class="thumbnail"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></div>
+                                                                <div class="titlename">
+                                                                    <form action="modelpages/test.php" method = "get">
+                                                                        <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                        <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                    </form>
+                                                                </div>
+                                                            </div><?php
+                                                                                            }
+                                                                                        }
+                                                                                    }?>
+                                        </div>
+                                    </tr>
+                                </table>
                             </table>
                         </center>
                         <br/>
@@ -80,8 +75,8 @@ $db_handle = new DBController();
                                 <tr>
                                     <td style="border: 5px solid #FFFFFF;">
                                         <center>
-                                            <i>
-                                                <div style="margin-bottom: 12px">@ 2020 Prof. Felix G. Hamza-Lup</i>
+                                                <div style="margin-bottom: 12px">
+                                                    <i>@ 2020 Prof. Felix G. Hamza-Lup</i>
                                                     <img style="position: relative; top: 6.5px;" src=thumbnails/team/gslo.png></img>
                                                 </div>
                                         </center>
@@ -90,11 +85,10 @@ $db_handle = new DBController();
                             </table>
                         </center>    
                         <br/>
-                    </center>
-                </td>
-            </tr>
-        </table>
-    </center>
-    <br/>	
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <br/>	
 	</body>
 </html>
