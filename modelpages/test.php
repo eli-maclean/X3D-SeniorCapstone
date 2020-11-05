@@ -36,5 +36,6 @@ session_start();
 				</div>
 			</div>
 		</div>
+		<pre><?php print_r($_GET); ?></pre>
 	</body>
 </html>
