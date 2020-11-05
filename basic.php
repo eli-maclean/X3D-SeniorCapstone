@@ -58,7 +58,13 @@ $db_handle = new DBController();
 															if ($product_array [$key]["type"]=="basic"){?>
                                                                     <div class="cell">
                                                                     <div class="thumbnail"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></div>
-                                                                    <div class="titlename"><form action="modelpages/test.php" method = "get"><input type="text" value="<?php echo $product_array[$key]["name"]; ?>" readonly><input type="submit" value="Go"></form></div>
+                                                                    <div class="titlename">
+                                                                        <form action="modelpages/test.php" method = "get">
+                                                                            <input type="text" name="name" value="<?php echo $product_array[$key]["name"]; ?>" readonly>
+                                                                            <input type="text" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>" readonly>
+                                                                            <input type="submit" value="Go">
+                                                                        </form>
+                                                                    </div>
                                                     </div>
                                                     <?php
                                                                                                             }
