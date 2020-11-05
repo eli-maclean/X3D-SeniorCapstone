@@ -28,7 +28,7 @@ session_start();
 			</div>
 			<div class="maxwrap">
 				<div class="x3d">
-					<X3DCanvas id="skullScene" src="x3d/BodySkin/BodySkinIndexedFaceSetNIST.x3d">
+					<X3DCanvas id="skullScene" src="<?php echo $_GET["x3d-loc"];?>">
 						<p>Your browser may not support all features required by X_ITE.
 						For a better experience, keep your browser up to date.
 						<a href="http://outdatedbrowser.com">Check here for latest versions.</a></p>

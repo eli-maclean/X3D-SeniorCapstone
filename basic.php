@@ -43,19 +43,20 @@ $db_handle = new DBController();
                         <center>
                             <h2 style="color: white;">Basic Models</h2>
                             <hr>
-                            <table style="width:77%"> 
-                                <table style="width:80%"> 
+                                <table style="width:80%"> <!--model grid-->
                                     <tr>
-                                        <center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
+                                        <center><h3 style="color: white;"><i>Please choose from the list below</i></h3><center>
                                         <div class="allcategories">
-                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models");
+                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
                                                 if (!empty($product_array)) {
                                                     foreach($product_array as $key=>$value){
                                                         if ($product_array [$key]["type"]=="basic"){
                                                             ?><div class="cell">
-                                                                <div class="thumbnail"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></div>
+                                                                <div class="thumbnail">
+                                                                    <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
+                                                                </div>
                                                                 <div class="titlename">
-                                                                    <form action="modelpages/test.php" method = "get">
+                                                                    <form action="modelpages/basic2.php" method = "get">
                                                                         <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
                                                                         <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
@@ -67,11 +68,10 @@ $db_handle = new DBController();
                                         </div>
                                     </tr>
                                 </table>
-                            </table>
                         </center>
                         <br/>
                         <center>
-                            <table class=title>
+                            <table class=title><!--Signature Bar -->
                                 <tr>
                                     <td style="border: 5px solid #FFFFFF;">
                                         <center>
@@ -89,6 +89,9 @@ $db_handle = new DBController();
                 </tr>
             </table>
         </center>
-        <br/>	
+        <br/>
+       <pre>
+            <?php echo print_r($product_array)	?>
+        </pre>
 	</body>
 </html>
