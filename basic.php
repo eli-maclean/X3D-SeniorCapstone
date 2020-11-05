@@ -57,11 +57,14 @@ $db_handle = new DBController();
 														foreach($product_array as $key=>$value){
 															if ($product_array [$key]["type"]=="basic"){?>
                                                                     <div class="cell">
-                                                                    <div class="thumbnail"><a href="modelpages\basic2.php"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
-                                                                    <div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
-													</div><?php}
-				                                            }
-			                                            }?>
+                                                                    <div class="thumbnail"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></div>
+                                                                    <div class="titlename"><form><input type="button"><?php echo $product_array[$key]["name"]; ?></form></div>
+                                                    </div>
+                                                    <?php
+                                                                                                            }
+				                                                                                    }
+                                                                                    }
+                                                        ?>
 								            </div>
                             </table>
                         </center>
@@ -85,7 +88,11 @@ $db_handle = new DBController();
                 </td>
             </tr>
         </table>
-        <p><?php echo print_r($product_array)?>
+        <?php 
+        echo '<pre>'; 
+        print_r($product_array); 
+        echo '</pre>'
+        ?>
     </center>
     <br/>	
 	</body>
