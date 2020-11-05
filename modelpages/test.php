@@ -35,8 +35,6 @@ session_start();
 					</X3DCanvas>
 				</div>
 			</div>
-		</div>
-		<?php echo $_GET["name"]; echo $_GET["adr"]; ?>
-	
+		</div>	
 	</body>
 </html>

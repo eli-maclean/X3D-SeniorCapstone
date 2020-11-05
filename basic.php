@@ -94,11 +94,6 @@ $db_handle = new DBController();
                 </td>
             </tr>
         </table>
-        <?php 
-        echo '<pre>'; 
-        print_r($product_array); 
-        echo '</pre>'
-        ?>
     </center>
     <br/>	
 	</body>
