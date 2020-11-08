@@ -31,9 +31,10 @@
                                     <center>
                                         <table class=wrt>
                                             <tr>
-													<td class=wrm><a class=wrt title="" href=index.html>Previous</a></td>
-													<td class=wrt><a class=wrt title="" href="http://web-students.armstrong.edu/~em07614/test/3dmodels.php"> Home </a></td>
-													<td class=wrt><a class=wrt title="" href=3dmodels.php>Next</a></td>
+													<td class=wrf><a class=wrf title="" href=index.html>Previous</a></td>
+                                                    <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~ja17173/senior/3dmodels.php"> Home </a></td>
+                                                    <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~ja17173/senior/3dmodels.php"> *Model type* </a></td>
+													<td class=wrf><a class=wrf title="" href=3dmodels.php>Next</a></td>
                                             </tr>
                                         </table>
                                     </center>
@@ -42,7 +43,7 @@
                         </table>
                 
                         <center>
-                        <h2 style="color: white;">Abdomen Volumetric</h2>
+                        <h2 style="color: white;"><?php echo $_GET["name"];?></h2>
                         <hr>
                         <table class=mouseTable> 
                             <table class=mouseTable> 
