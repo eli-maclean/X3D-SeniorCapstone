@@ -58,14 +58,16 @@
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Press.png"></img>Pan</td></tr>
 												</table>
 											</div>
-																		<div class="maxwrap">
-																			<div class="x3d">
-                                                                                <X3DCanvas id="skullScene" src="<?php echo $_GET["x3d-loc"];?>">
-                                                                                    <p>Your browser may not support all features required by X_ITE.
-                                                                                    For a better experience, keep your browser up to date.
-                                                                                    <a href="http://outdatedbrowser.com">Check here for latest versions.</a></p>
-                                                                                </X3DCanvas>
-																		</div>
+                                            <div class="maxwrap">
+                                                <div class="x3dbasic">
+                                                    <X3DCanvas id="skullScene" src="<?php echo $_GET["x3d-loc"];?>">
+                                                        <p>Your browser may not support all features required by X_ITE.
+                                                        For a better experience, keep your browser up to date.
+                                                        <a href="http://outdatedbrowser.com">Check here for latest versions.</a></p>
+                                                    </X3DCanvas>
+                                                </div>  
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>
@@ -78,7 +80,7 @@
                                         <center>
                                             <i>
                                                 <div style="margin-bottom: 12px">@ 2020 Prof. Felix G. Hamza-Lup</i>
-                                                    <img style="position: relative; top: 6.5px;" src=thumbnails/team/gslo.png></img>
+                                                    <img style="position: relative; top: 6.5px;" src=../thumbnails/team/gslo.png></img>
                                                 </div>
                                         </center>
                                     </td>
