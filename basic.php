@@ -31,7 +31,7 @@ $db_handle = new DBController();
                                             <table class=wrt>
                                                 <tr>
 													<td class=wrf><a class=wrf href=3dmodels.php>Models</a></td>
-                                                    <td class=wrs><a class=wrf href=basic.php>Basic</a></td>
+                                                    <td class=wrf><a class=wrf href=basic.php>Basic</a></td>
                                                     <td class=wrf><a class=wrf href=decomposable.php>Decomposable</a></td>
                                                     <td class=wrf><a class=wrf href=volume.php>Volume</a></td>
                                                 </tr>
@@ -63,6 +63,7 @@ $db_handle = new DBController();
                                                                 <div class="titlename">
                                                                     <form action="modelpages/basic2.php" method = "get">
                                                                         <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                        <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
                                                                         <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
                                                                 </div>
