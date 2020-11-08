@@ -87,7 +87,7 @@ table.mpg {
 }
 
 table.mouseTable{
-	background-color: rgb(207, 207, 207);
+	background-color: #222;
 	border: 0px
 }
 
@@ -227,15 +227,33 @@ button.fake:hover {
 	width: 125%;
     height: 125%;
 }
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
 
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
 .center {
 	margin: auto;
 	padding: 10px;
 	border: 0px solid black;
 	overflow: hidden;
-	height: 800px;
+	height: 700px;
 	width: 1000px;
 	overflow: hidden;
+	margin-bottom: 30px;
 	background: #222;
 	border-radius: 10px 10px 10px 10px;
 	position: relative;
@@ -259,8 +277,8 @@ button.fake:hover {
 .maxwrap {
 	float: left;
 	margin: auto;
-	width: 1000px;
-	height: 700px;
+	width: 500px;
+	height: 500px;
 }
 
 .slider {
@@ -277,15 +295,13 @@ button.fake:hover {
 	display: block;
 }
 .topbar {
-	background-color: grey;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 700px;
-    height: 175px;
-    position: absolute;
-    display: block;
-    left: 13%;
-    border-radius: 6px;
-	padding-left: 38;
+	float: top;
+	color: #DDD;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 300px;
+	position: absolute;
+	display: block;
+	left: 14%;
 }
 
 .percentage {
@@ -336,9 +352,7 @@ button.fake:hover {
 	padding: 25 px;
 	display: block;
 	position: absolute;
-	top: 61%; left: 56%;
+	top: 61%; left: 55%;
 	transform: translate(-57%,-50%);
 	border-radius: 10px 10px 10px 10px;
-	width: 900px; 
-	height: 600px;
 }
