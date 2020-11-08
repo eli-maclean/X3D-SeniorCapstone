@@ -51,24 +51,27 @@ $db_handle = new DBController();
 											<center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
 											
 											
-											<div class="allcategories"><?php
-												$product_array = $db_handle->runQuery("SELECT * FROM models");
-													if (!empty($product_array)) {
-														foreach($product_array as $key=>$value){
-															if ($product_array [$key]["type"]=="basic"){
-											?>
-											
-													<div class="cell">
-													<div class="thumbnail"><a href="<?php echo $product_array[$key]["adr"]; ?>"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
-													<div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
-													</div>
-											<?php
-					}
-				}
-			}
-			?>
-								</div>
-										
+                                            <div class="allcategories">
+                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
+                                                if (!empty($product_array)) {
+                                                    foreach($product_array as $key=>$value){
+                                                        if ($product_array [$key]["type"]=="basic"){
+                                                            ?><div class="cell">
+                                                                <div class="thumbnail">
+                                                                    <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
+                                                                </div>
+                                                                <div class="titlename">
+                                                                    <form action="modelpages/basic2.php" method = "get">
+                                                                        <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                        <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                    </form>
+                                                                </div>
+                                                            </div><?php
+                                                                                            }
+                                                                                        }
+                                                                                    }?>
+                                        </div>
+									</tr>	
 								</table>
                         </center>
                         <br/>
