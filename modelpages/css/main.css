@@ -199,14 +199,17 @@ button.fake:hover {
  }
 		 
 .thumbnail{
-	height: 155px;
+	/* height: 155px;
 	width: 250px;
 	background-color: #FFF;
-	border:1px solid black;
+	border:1px solid black; 
+
+	removing for possible css changes */
 }
 		
 .titlename {
-	padding: 15px 15px 0px 15px;
+	/* padding: 15px 15px 0px 15px;
+	removing padding for possible css changes */
 	overflow: auto;
 	text-align: center;
 	background-color: #D4D4D4; 
@@ -338,4 +341,22 @@ button.fake:hover {
 	border-radius: 10px 10px 10px 10px;
 	width: 900px; 
 	height: 600px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 6px 8px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
