@@ -1,3 +1,8 @@
+<?php 
+session_start();
+require_once("../dbcontroller.php");
+$db_handle = new DBController();
+?>
 <html>
 	
 	<head>
@@ -33,7 +38,27 @@
                                             <tr>
 													<td class=wrf><a class=wrf title="" href=index.html>Previous</a></td>
                                                     <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~ja17173/senior/3dmodels.php"> Home </a></td>
-                                                    <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~ja17173/senior/3dmodels.php"> *Model type* </a></td>
+                                                    <td class=wrf> <div class="dropdown"> <a class=wrt href=../basic.php> Basic </a> 
+                                                                                <div class="dropdown-content">
+                                                                                <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
+                                                                    if (!empty($product_array)) {
+                                                                                foreach($product_array as $key=>$value){
+                                                                                    if ($product_array [$key]["type"]=="basic"){
+                                                                                        ?>
+
+                                                                                            <div class="titlename">
+                                                                                                <form action="basic2.php" method = "get">
+                                                                                                    <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                                                    <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                                                </form>
+
+                                                                                        </div><?php
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }?>
+                                                                                </div>
+                                                                                </div>
+                                                    </td>
 													<td class=wrf><a class=wrf title="" href=3dmodels.php>Next</a></td>
                                             </tr>
                                         </table>
