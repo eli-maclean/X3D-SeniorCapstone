@@ -49,6 +49,7 @@ $db_handle = new DBController();
                                                                                             <div class="titlename">
                                                                                                 <form action="volume2.php" method = "get">
                                                                                                     <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
                                                                                                     <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                                                 </form>
 

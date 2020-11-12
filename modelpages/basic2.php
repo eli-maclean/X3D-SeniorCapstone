@@ -43,21 +43,20 @@ $db_handle = new DBController();
                                                                                 <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
                                                                     if (!empty($product_array)) {
                                                                                 foreach($product_array as $key=>$value){
-                                                                                    if ($product_array [$key]["type"]=="basic"){
                                                                                         ?>
 
                                                                                             <div class="titlename">
                                                                                                 <form action="basic2.php" method = "get">
                                                                                                     <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
                                                                                                     <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                                                 </form>
 
-                                                                                        </div><?php
-                                                                                                                        }
+                                                                                            </div><?php
                                                                                                                     }
                                                                                                                 }?>
                                                                                 </div>
-                                                                                </div>
+                                                                        </div>
                                                     </td>
 													<td class=wrf><a class=wrf title="" href=3dmodels.php>Next</a></td>
                                             </tr>
