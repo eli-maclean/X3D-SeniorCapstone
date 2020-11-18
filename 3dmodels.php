@@ -24,10 +24,11 @@
                                         <table class=wrt>
                                             <tr>
                                                 <td class=wrt><a class=wrt title="Human Anatomy using Web 3D" href=index.html>Introduction</a></td>
-                                                <td class=wrt><a class=wrt title="Model Lang. Std & JScript Lib." href=whyX3D.html>Why X3D?</a></td>
-                                                <td class=wrm><a class=wrt title="Basic, Decomposable & Volumetric Models" href=3dmodels.php>Models</a></td>
+                                                <td class=wrt><a class=wrt title="Model Lang. Std & JScript Lib." href=whyX3D.html>About X3D</a></td>
+                                                <td class=wrm><a class=wrt title="Basic, Decomposable & Volumetric Models" href=3dmodels.php>Medical 3D Models</a></td>
                                                 <td class=wrt><a class=wrt title="Navigation usage info" href=manual.html>Manual</a></td>
-                                                <td class=wrt><a class=wrt title="Closer look at the Team" href=contact.html>Contact</a></td>
+                                                <td class=wrt><a class=wrt title="Closer look at the Team" href=contact.html>Team Information</a></td>
+                                                <td class=wrt><a class=wrt title="Suggestions and Feedback" href=feedback.php>Feedback</a></td>
                                             </tr>
                                         </table>
                                     </center>
@@ -36,7 +37,7 @@
                         </table>
                 
                         <center>
-                        <h2 style="color: white;">Models</h2>
+                        <h2 style="color: white;">Model Types</h2>
                         <hr>
                         <table style="width:77%"> 
 							<table style="width:80%"> 
@@ -46,9 +47,9 @@
 										
 									</tr>
 									<tr>
-										<th>Basic</th>
-										<th>Decomposable</th>
-										<th>Volume</th>
+										<th>Basic 3D Models</th>
+										<th>Decomposable 3D Models</th>
+										<th>Volumetric 3d Models</th>
 									</tr>
 									<tr>
 										<td>
