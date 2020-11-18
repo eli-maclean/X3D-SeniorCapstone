@@ -21,7 +21,8 @@ $db_handle = new DBController();
                             <table class="title" cellpadding="20">
                                 <tr>
                                     <td>
-                                        <center><h1>X3D Based Systems for Neuroanatomy Exploration and Medical Training</h1></center>
+                                        <center><h1>X3D Based Systems for Neuroanatomy Exploration and Medical Training</h1><h4 >Ver. 1.1</h4></center></br>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -50,26 +51,23 @@ $db_handle = new DBController();
                                         <div class="allcategories">
                                             <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
                                                 if (!empty($product_array)) {
-                                                    foreach($product_array as $key=>$value){
-                                                        if ($product_array [$key]["type"]=="basic"){
+                                                    foreach($product_array as $key=>$value){                                                        
                                                             ?><div class="cell">
                                                                 <div class="thumbnail">
                                                                     <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
                                                                 </div>
                                                                 <div class="titlename">
                                                                     <form action="modelpages/basic2.php" method = "get">
-                                                                        <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
-                                                                        <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                        <input type="hidden" name="type"  value="<?php echo $product_array[$key]["type"]; ?>">
+                                                                        <input type="hidden" name="id"  value="<?php echo $product_array[$key]["id"]; ?>">
                                                                         <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
                                                                 </div>
-                                                            </div><?php
-                                                                                            }
-                                                                                        }
-                                                                                    }?>
+                                                            </div>
+                                                                                    <?php
+                                                                                    }                                                                                     
+                                                                                }
+                                                                                ?>
                                         </div>
-
                                     </tr>
                                 </table>
                         </center>
@@ -94,8 +92,5 @@ $db_handle = new DBController();
             </table>
         </center>
         <br/>
-       <pre>
-            <?php echo print_r($product_array)	?>
-        </pre>
 	</body>
 </html>
