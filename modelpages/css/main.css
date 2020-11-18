@@ -106,7 +106,7 @@ td.wrt {
 	padding: 10;
 	background-color: #0093ed;
     border: 3px solid #4b6373;
-    width:20%;
+    width:16.66%;
 	text-align: center;
 }
 
@@ -198,14 +198,14 @@ button.fake:hover {
 
  }
 		 
-.thumbnail{
-	/* height: 155px;
+/*.thumbnail{
+	 height: 155px;
 	width: 250px;
 	background-color: #FFF;
 	border:1px solid black; 
 
-	removing for possible css changes */
-}
+	removing for possible css changes 
+}*/
 		
 .titlename {
 	/* padding: 15px 15px 0px 15px;
