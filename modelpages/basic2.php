@@ -49,7 +49,7 @@ $mysqli = $db_handle->connectDB();
                                                             } 
                                                     ?>
                                                 </td>
-                                                <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/test_repo/active/3dmodels.php"> Home </a></td>
+                                                <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/active/3dmodels.php"> Home </a></td>
                                                 <td class=wrf><div class="dropdown"> <a class=wrt href=../basic.php> Basic </a>  <!--Basic Models Dropdown Menu-->
                                                         <div class="dropdown-content">
                                                             <?php $dd_list = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
