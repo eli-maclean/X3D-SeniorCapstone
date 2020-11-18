@@ -15,7 +15,8 @@
   <Scene>
     <WorldInfo title='BonesLeftFoot.x3d'/>
     <Transform DEF='LeftFootSkeletonParts' scale='0.029 0.029 0.029'>
-      <Viewpoint DEF='feet' description='LeftFoot' fieldOfView='0.785' orientation='0.0 0.0 1.0 0.0' position='3 3 15'/>
+      
+       <Viewpoint id="right" position="-2.43383 1.07351 -1.28700" orientation="-0.00318 -0.99950 -0.03159 2.06609" description="camera"></Viewpoint>
       <Group DEF='LeftFoot'>
         <!-- ltalus lcalc lcuboid llcun lmcun lnaviclr [missingsomething] lfmet lmet2 lmet3 lmet4 lmet5 lfpprox2 lfpprox3 lfpprox4 lfpprox5 lfmphal lfmphal2 lfmphal3 lfmphal4 lfdphal lfdphal2 lfdphal3 lfdphal4 [lfdphal5 missing] -->
         <Shape DEF='ltalus'>
