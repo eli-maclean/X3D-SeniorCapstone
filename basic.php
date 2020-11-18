@@ -30,7 +30,7 @@ $db_handle = new DBController();
                                             <table class=wrt>
                                                 <tr>
 													<td class=wrf><a class=wrf href=3dmodels.php>Models</a></td>
-                                                    <td class=wrs><a class=wrf href=basic.php>Basic</a></td>
+                                                    <td class=wrf><a class=wrf href=basic.php>Basic</a></td>
                                                     <td class=wrf><a class=wrf href=decomposable.php>Decomposable</a></td>
                                                     <td class=wrf><a class=wrf href=volume.php>Volume</a></td>
                                                 </tr>
@@ -39,13 +39,14 @@ $db_handle = new DBController();
                                     </td>
                                 </tr>
                             </table>
+
                         </center>							
                         <center>
                             <h2 style="color: white;">Basic Models</h2>
                             <hr>
                                 <table style="width:80%"> <!--model grid-->
                                     <tr>
-                                        <center><h3 style="color: white;"><i>Please choose from the list below</i></h3><center>
+                                        <center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
                                         <div class="allcategories">
                                             <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
                                                 if (!empty($product_array)) {
@@ -58,6 +59,8 @@ $db_handle = new DBController();
                                                                 <div class="titlename">
                                                                     <form action="modelpages/basic2.php" method = "get">
                                                                         <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                        <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                        <input type="hidden" name="type"  value="<?php echo $product_array[$key]["type"]; ?>">
                                                                         <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
                                                                 </div>
@@ -66,6 +69,7 @@ $db_handle = new DBController();
                                                                                         }
                                                                                     }?>
                                         </div>
+
                                     </tr>
                                 </table>
                         </center>

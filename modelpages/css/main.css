@@ -87,7 +87,7 @@ table.mpg {
 }
 
 table.mouseTable{
-	background-color: #222;
+	background-color: rgb(207, 207, 207);
 	border: 0px
 }
 
@@ -190,8 +190,8 @@ button.fake:hover {
 }
 
 .cell {
-			display:block;
-			float: left;
+	display:block;
+	float: left;
 	background: #ffffff;
 	margin: 15px 0px 30px 30px;
 	border: #E0E0E0 1px solid;
@@ -199,17 +199,17 @@ button.fake:hover {
  }
 		 
 .thumbnail{
-	height: 155px;
+	/* height: 155px;
 	width: 250px;
 	background-color: #FFF;
+	border:1px solid black; 
 
-	border:1px solid black;
-	
-	
+	removing for possible css changes */
 }
 		
 .titlename {
-	padding: 15px 15px 0px 15px;
+	/* padding: 15px 15px 0px 15px;
+	removing padding for possible css changes */
 	overflow: auto;
 	text-align: center;
 	background-color: #D4D4D4; 
@@ -233,10 +233,9 @@ button.fake:hover {
 	padding: 10px;
 	border: 0px solid black;
 	overflow: hidden;
-	height: 700px;
+	height: 800px;
 	width: 1000px;
 	overflow: hidden;
-	margin-bottom: 30px;
 	background: #222;
 	border-radius: 10px 10px 10px 10px;
 	position: relative;
@@ -260,8 +259,8 @@ button.fake:hover {
 .maxwrap {
 	float: left;
 	margin: auto;
-	width: 500px;
-	height: 500px;
+	width: 1000px;
+	height: 700px;
 }
 
 .slider {
@@ -278,13 +277,15 @@ button.fake:hover {
 	display: block;
 }
 .topbar {
-	float: top;
-	color: #DDD;
-	font-family: Arial, Helvetica, sans-serif;
-	width: 300px;
-	position: absolute;
-	display: block;
-	left: 14%;
+	background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    height: 175px;
+    position: absolute;
+    display: block;
+    left: 13%;
+    border-radius: 6px;
+	padding-left: 38;
 }
 
 .percentage {
@@ -335,7 +336,27 @@ button.fake:hover {
 	padding: 25 px;
 	display: block;
 	position: absolute;
-	top: 61%; left: 55%;
+	top: 61%; left: 56%;
 	transform: translate(-57%,-50%);
 	border-radius: 10px 10px 10px 10px;
+	width: 900px; 
+	height: 600px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 6px 8px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
