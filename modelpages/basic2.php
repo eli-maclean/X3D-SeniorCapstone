@@ -46,7 +46,9 @@ $mysqli = $db_handle->connectDB();
                                                         if($row = mysqli_fetch_array($back))
                                                             {
                                                                 echo '<a class=wrf title="" href="basic2.php?id='.$row['id'].'">Back</a>';  
-                                                            } 
+                                                            } else {
+                                                                echo '<a class=wrf title="" href="">Back</a>';
+                                                            }
                                                     ?>
                                                 </td>
                                                 <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/active/3dmodels.php"> Home </a></td>
@@ -100,11 +102,7 @@ $mysqli = $db_handle->connectDB();
 											</div>
                                             <div class="maxwrap">
                                                 <div class="x3dbasic">
-<<<<<<< HEAD
-                                                    <X3DCanvas id="x3dScene" src="<?php echo $_GET["x3d-loc"];?>">
-=======
                                                     <X3DCanvas id="x3dScene" src="<?php echo $model_row[0]["x3d-loc"];?>">
->>>>>>> team2-main
                                                         <p>Your browser may not support all features required by X_ITE.
                                                         For a better experience, keep your browser up to date.
                                                         <a href="http://outdatedbrowser.com">Check here for latest versions.</a></p>
