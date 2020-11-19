@@ -12,8 +12,8 @@ CREATE TABLE `models` (
 
 --dump table data
 INSERT INTO `models` (`id`,`name`,`thumbnail`,`adr`,`x3d-loc`,`type`) VALUES
- (0,"Brain","thumbnails/brain.png","modelpages/brain.html","x3d/Brain/Brain_nocompression.x3d","decomposable"),
- (1,"Skull","thumbnails/skeleton.png","modelpages/skull.html","x3d/Skull/skullAssembly_noscript.x3d","decomposable"),
+ (0,"Brain","thumbnails/brain.png","modelpages/brain.php","x3d/Brain/Brain_nocompression.x3d","decomposable"),
+ (1,"Skull","thumbnails/skull.png","modelpages/skull.php","x3d/Skull/skullAssembly_noscript.x3d","decomposable"),
  (2,"Body Skin","thumbnails/bodyskin.png","modelpages/bodyskin.html","x3d/BodySkin/BodySkinIndexedFaceSetNIST.x3d","basic"),
  (3,"Chest","thumbnails/chest.png","modelpages/chest.html","x3d/Chest/BonesChest.x3d","basic"),
  (4,"Left Femur","thumbnails/femurleft.png","modelpages/femur_left.html","x3d/FemurLeft/BonesLeftFemur.x3d","basic"),
