@@ -14,12 +14,12 @@
   </head>
   <Scene>
   <Viewpoint
-    position='0.10 0.70 7.0'
+    position='0.0 0.0 7.0'
     orientation='0.0 0.0 1.0 0.0'
     fieldOfView='0.12'
     description='Entry View'/>
     <WorldInfo title='BonesLeftFemur.x3d'/>
-    <Transform DEF='DSkeletonParts' scale='0.029 0.029 0.029'>
+    <Transform DEF='DSkeletonParts' scale='0.029 0.029 0.029' translation='-0.10 -0.70 0.0'>
       <Group DEF='HeadC4'>
         <Shape DEF='lfemur'>
           <Appearance>
@@ -32,4 +32,65 @@
       </Group>
     </Transform>
   </Scene>
+  <!---  X,Y,Z color scale used to make sure the model is at the orgin point
+<Scene>
+      <Group>
+          <Group DEF="ArrowGreen">
+              <Shape>
+                  <Cylinder DEF="ArrowCylinder" radius=".025" top="false"/>
+                  <Appearance DEF="Green">
+                      <Material diffuseColor=".1 .6 .1" emissiveColor=".05 .2 .05"/>
+                  </Appearance>
+              </Shape>
+              <Transform translation="0 1 0">
+                  <Shape>
+                      <Cone DEF="ArrowCone" bottomRadius=".05" height=".1"/>
+                      <Appearance USE="Green"/>
+                  </Shape>
+              </Transform>
+          </Group>
+          <Shape>
+              <Sphere radius=".01"/>
+              <Appearance>
+                  <Material/>
+              </Appearance>
+          </Shape>
+      </Group>
+      <Transform rotation="0 0 1 -1.57079">
+          <Group>
+              <Group DEF="ArrowRed">
+                  <Shape>
+                      <Cylinder USE="ArrowCylinder"/>
+                      <Appearance DEF="Red">
+                          <Material diffuseColor=".7 .1 .1" emissiveColor=".33 0 0"/>
+                      </Appearance>
+                  </Shape>
+                  <Transform translation="0 1 0">
+                      <Shape>
+                          <Cone USE="ArrowCone"/>
+                          <Appearance USE="Red"/>
+                      </Shape>
+                  </Transform>
+              </Group>
+          </Group>
+      </Transform>
+      <Transform rotation="1 0 0 1.57079">
+          <Group>
+              <Group DEF="ArrowBlue">
+                  <Shape>
+                      <Cylinder USE="ArrowCylinder"/>
+                      <Appearance DEF="Blue">
+                          <Material diffuseColor=".3 .3 1" emissiveColor=".1 .1 .33"/>
+                      </Appearance>
+                  </Shape>
+                  <Transform translation="0 1 0">
+                      <Shape>
+                          <Cone USE="ArrowCone"/>
+                          <Appearance USE="Blue"/>
+                      </Shape>
+                  </Transform>
+              </Group>
+          </Group>
+      </Transform>
+  </Scene> -->
 </X3D>

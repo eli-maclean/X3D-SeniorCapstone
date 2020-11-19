@@ -2,6 +2,9 @@
 session_start();
 require_once("../dbcontroller.php");
 $db_handle = new DBController();
+$id = $_GET["id"];
+$model_row = $db_handle->runQuery("SELECT * FROM models where id = $id");
+$mysqli = $db_handle->connectDB();
 ?>
 <html>
 	
@@ -25,6 +28,8 @@ $db_handle = new DBController();
 	    <script type="text/javascript" src="https://code.create3000.de/x_ite/latest/dist/x_ite.min.js"></script>
 	</head>
 	<body>
+    <!--    **print array test code, add '<' to the php tag***   <pre> ?php   echo print_r($model_row)	?></pre>-->
+
 	<center>
 		<table class=mpg>
             <tr>
@@ -36,29 +41,39 @@ $db_handle = new DBController();
                                     <center>
                                         <table class=wrt>
                                             <tr>
-													<td class=wrf><a class=wrf title="" href=index.html>Previous</a></td>
-                                                    <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~ja17173/senior/3dmodels.php"> Home </a></td>
-                                                    <td class=wrf> <div class="dropdown"> <a class=wrt href=../basic.php> Basic </a> 
-                                                                                <div class="dropdown-content">
-                                                                                <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
-                                                                    if (!empty($product_array)) {
-                                                                                foreach($product_array as $key=>$value){
-                                                                                        ?>
-
-                                                                                            <div class="titlename">
-                                                                                                <form action="basic2.php" method = "get">
-                                                                                                    <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
-                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                                                    <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                                                </form>
-
-                                                                                            </div><?php
-                                                                                                                    }
-                                                                                                                }?>
-                                                                                </div>
-                                                                        </div>
-                                                    </td>
-													<td class=wrf><a class=wrf title="" href=3dmodels.php>Next</a></td>
+                                                <td class=wrf><?php                                 // Back button 
+                                                        $back = mysqli_query($mysqli,"SELECT * FROM models WHERE id<$id AND type = 'basic' order by id DESC");
+                                                        if($row = mysqli_fetch_array($back))
+                                                            {
+                                                                echo '<a class=wrf title="" href="basic2.php?id='.$row['id'].'">Back</a>';  
+                                                            } 
+                                                    ?>
+                                                </td>
+                                                <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/active/3dmodels.php"> Home </a></td>
+                                                <td class=wrf><div class="dropdown"> <a class=wrt href=../basic.php> Basic </a>  <!--Basic Models Dropdown Menu-->
+                                                        <div class="dropdown-content">
+                                                            <?php $dd_list = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
+                                                                if (!empty($dd_list)) {
+                                                                    foreach($dd_list as $key=>$value){?>
+                                                                        <div class="titlename">
+                                                                            <form action="basic2.php" method = "get">
+                                                                                <input type="hidden" name="id"  value="<?php echo $dd_list[$key]["id"]; ?>">
+                                                                                <input type="submit" value="<?php echo $dd_list[$key]["name"]; ?>">
+                                                                            </form>
+                                                                        </div><?php
+                                                                                        }
+                                                                                    }?>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class=wrf><?php                                 // Next button 
+                                                        $next = mysqli_query($mysqli,"SELECT * FROM models WHERE id>$id AND type = 'basic' order by id ASC");
+                                                        if($row = mysqli_fetch_array($next))
+                                                            {
+                                                                echo '<a class=wrf title="" href="basic2.php?id='.$row['id'].'">Next</a>';  
+                                                            } 
+                                                    ?>
+                                                </td>
                                             </tr>
                                         </table>
                                     </center>
@@ -67,7 +82,7 @@ $db_handle = new DBController();
                         </table>
                 
                         <center>
-                        <h2 style="color: white;"><?php echo $_GET["name"];?></h2>
+                        <h2 style="color: white;"><?php echo $model_row[0]["name"];?></h2>
                         <hr>
                         <table class=mouseTable> 
                             <table class=mouseTable> 
@@ -85,7 +100,11 @@ $db_handle = new DBController();
 											</div>
                                             <div class="maxwrap">
                                                 <div class="x3dbasic">
+<<<<<<< HEAD
                                                     <X3DCanvas id="x3dScene" src="<?php echo $_GET["x3d-loc"];?>">
+=======
+                                                    <X3DCanvas id="x3dScene" src="<?php echo $model_row[0]["x3d-loc"];?>">
+>>>>>>> team2-main
                                                         <p>Your browser may not support all features required by X_ITE.
                                                         For a better experience, keep your browser up to date.
                                                         <a href="http://outdatedbrowser.com">Check here for latest versions.</a></p>
