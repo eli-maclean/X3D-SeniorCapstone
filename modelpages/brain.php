@@ -26,7 +26,7 @@ $db_handle = new DBController();
 											<table class=wrt>
 												<tr>
 														<td class=wrf><a class=wrf title="" href=index.html>Previous</a></td>
-														<td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~ja17173/senior/3dmodels.php"> Home </a></td>
+														<td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/active/3dmodels.php"> Home </a></td>
 														<td class=wrf> <div class="dropdown"> <a class=wrt href=../decomposable.php> Decomposable </a> 
 																				<div class="dropdown-content">
                                                                                 <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'decomposable'");
