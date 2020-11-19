@@ -71,6 +71,16 @@ color: 88ACFF;
 	position: static;
 	display: block;
 }
+
+.sidebar2 {
+	/* float: right; */
+	color: #DDD;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 300px;
+	position: static;
+	display: block;
+}
+
 .topbar {
 	float: left;
 	color: #DDD;
