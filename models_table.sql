@@ -33,7 +33,11 @@ INSERT INTO `models` (`id`,`name`,`thumbnail`,`adr`,`x3d-loc`,`type`) VALUES
  (18,"Bottom Teeth","thumbnails/teeth.png","modelpages/teeth.html","x3d/TeethBottom/BonesTeethBottom.x3d","basic"),
  (19,"Left Tibia/Fibula","thumbnails/tibiafibulaleft.png","modelpages/tibiaFibula_left.html","x3d/TibiaFibulaLeft/BonesLeftTibiaFibula.x3d","basic"),
  (20,"Right Tibia/Fibula","thumbnails/tibiafibularight.png","modelpages/tibiaFibula_right.html","x3d/TibiaFibulaRight/BonesRightTibiaFibula.x3d","basic"),
- (21,"Volumetric Abdomen","thumbnails/abdomenvol.png","modelpages/abdomen_volumetric.html","x3d/abdomen_volume/BasicAbdomen.x3d","volume"),
- (22,"Volumetric Body","thumbnails/bodyvol.png","modelpages/body_volumetric.html","x3d/body_volume/BasicBody.x3d","volume"),
- (23,"Volumetric Brain","thumbnails/brainvol.png","modelpages/brain_volumetric.html","x3d/brain_volume/BasicBrain.x3d","volume"),
- (24,"Volumetric Skull","thumbnails/skullvol.png","modelpages/skull_volumetric.html","x3d/skull_volume/BasicSkull.x3d","volume");
+ (21,"Maxillary","thumbnails/Maxillary.png","modelpages/Maxillary,html","x3d/Maxillary/Maxillary.x3d","basic"),
+ (22,"Heart and Kidney","thumbnails/heartkidney.png","modelpages/HeartKidney.html","x3d/Heartkidney/HeartKidney.x3d","basic"),
+ (23,"Mandibular","thumbnails/mandibular.png","modelpages/Mandibular.html","x3d/Mandibular/Mandibular.x3d","basic"),
+ (24,"Respiratory System","thumbnails/RespiratorySystem.png","modelpages/RespiratorySystem.html","x3d/RespiratorySystem/RespiratorySystem.x3d","basic"),
+ (25,"Volumetric Abdomen","thumbnails/abdomenvol.png","modelpages/abdomen_volumetric.html","x3d/abdomen_volume/BasicAbdomen.x3d","volume"),
+ (26,"Volumetric Body","thumbnails/bodyvol.png","modelpages/body_volumetric.html","x3d/body_volume/BasicBody.x3d","volume"),
+ (27,"Volumetric Brain","thumbnails/brainvol.png","modelpages/brain_volumetric.html","x3d/brain_volume/BasicBrain.x3d","volume"),
+ (28,"Volumetric Skull","thumbnails/skullvol.png","modelpages/skull_volumetric.html","x3d/skull_volume/BasicSkull.x3d","volume");
