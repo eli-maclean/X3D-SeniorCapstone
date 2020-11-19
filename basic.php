@@ -13,8 +13,7 @@ $db_handle = new DBController();
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body class="scrolling">
-	
-<center>
+        <center>
             <table class=mpf>
                 <tr>
                     <td style="border: 0px solid #FFFFFF;">
@@ -22,7 +21,8 @@ $db_handle = new DBController();
                             <table class="title" cellpadding="20">
                                 <tr>
                                     <td>
-                                        <center><h1>X3D Based Systems for Neuroanatomy Exploration and Medical Training</h1></center>
+                                        <center><h1>X3D Based Systems for Neuroanatomy Exploration and Medical Training</h1></center><h4 >Ver. 1.1</h4>
+                                        
                                     </td>
                                 </tr>
                                 <tr>
@@ -30,92 +30,55 @@ $db_handle = new DBController();
                                         <center>
                                             <table class=wrt>
                                                 <tr>
-													<td class=wrf><a class=wrf href=3dmodels.php>Models</a></td>
-                                                    <td class=wrs><a class=wrf href=basic.php>Basic</a></td>
-                                                    <td class=wrf><a class=wrf href=decomposable.php>Decomposable</a></td>
-                                                    <td class=wrf><a class=wrf href=volume.php>Volume</a></td>
-                                                    <div class="dropdown">
-				                                        <button class="dropbtn" onclick="myFunction()" title="Hold Ctrl+Click to open new tab for models in list">Basic Models
-					                                        <i class="fa fa-caret-down"></i>
-				                                        </button>
-				                                        <div class="dropdown-content" id="myDropdown">
-					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/bodyskin.html">Body Skin</a>
-					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/chest.html">Chest</a>
-					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/femur_left.html">Left Femur</a>
-					                                        <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/femur_right.html">Right Femur</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/foot_left.html">Left Foot</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/foot_right.html">Right Foot</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/girdle.html">Girdle</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/hand_left.html">Left Hand</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/hand_right.html">Right Hand</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/head.html">Head</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/humerus_left.html">Left Humerus</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/humerus_right.html">Right Humerus</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/radiusUlna_left.html">Left Radius/Ulna</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/radiusUlna_right.html">Right Radius/Ulna</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/skeleton.html">Skeleton</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/teeth.html">Teeth</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/tibiaFibula_left.html">Left Tibia/Fibula</a>
-                                                            <a href="http://web-students.armstrong.edu/~kp14163/WebsiteFiles/modelpages/tibiaFibula_right.html">Right Tibia/Fibula</a>
-                                                        </div>
-                                                     <script>
-                                                        function myFunction() {
-                                                            document.getElementById("myDropdown").classList.toggle("show");
-                                                        }
-                                                        window.onclick = function(e) {
-                                                            if (!e.target.matches('.dropbtn')) {
-                                                            var myDropdown = document.getElementById("myDropdown");
-                                                                if (myDropdown.classList.contains('show')) {
-                                                                myDropdown.classList.remove('show');
-                                                                }
-                                                            }
-                                                        }
-                                                    </script>
+													<td class=wrf><a class=wrf href=3dmodels.php>Model Types</a></td>
+                                                    <td class=wrf><a class=wrf href=basic.php>Basic 3D Models</a></td>
+                                                    <td class=wrf><a class=wrf href=decomposable.php>Decomposable 3D Models</a></td>
+                                                    <td class=wrf><a class=wrf href=volume.php>Volumetric 3d Models</a></td>
                                                 </tr>
                                             </table>
                                         </center>
                                     </td>
                                 </tr>
                             </table>
-							
-              <center>
-                        <h2 style="color: white;">Basic Models</h2>
-                        <hr>
-                        <table style="width:77%"> 
-							<table style="width:80%"> 
-									<tr>
-										
-											<center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
-											
-											
-											<div class="allcategories"><?php
-												$product_array = $db_handle->runQuery("SELECT * FROM models");
-													if (!empty($product_array)) {
-														foreach($product_array as $key=>$value){
-															if ($product_array [$key]["type"]=="basic"){
-											?>
-											
-													<div class="cell">
-													<div class="thumbnail"><a href="<?php echo $product_array[$key]["adr"]; ?>"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
-													<div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
-													</div>
-											<?php
-					}
-				}
-			}
-			?>
-								</div>
-										
-								</table>
+
+                        </center>							
+                        <center>
+                            <h2 style="color: white;">Basic 3D Models</h2>
+                            <hr>
+                                <table style="width:80%"> <!--model grid-->
+                                    <tr>
+                                        <center><h3 style="color: white;"><i>Select the tile of the model you would like to view</i></h3><center>
+                                        <div class="allcategories">
+                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
+                                                if (!empty($product_array)) {
+                                                    foreach($product_array as $key=>$value){                                                        
+                                                            ?><div class="cell">
+                                                                <div class="thumbnail">
+                                                                    <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
+                                                                </div>
+                                                                <div class="titlename">
+                                                                    <form action="modelpages/basic2.php" method = "get">
+                                                                        <input type="hidden" name="id"  value="<?php echo $product_array[$key]["id"]; ?>">
+                                                                        <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                                                    <?php
+                                                                                    }                                                                                     
+                                                                                }
+                                                                                ?>
+                                        </div>
+                                    </tr>
+                                </table>
                         </center>
                         <br/>
                         <center>
-                            <table class=title>
+                            <table class=title><!--Signature Bar -->
                                 <tr>
                                     <td style="border: 5px solid #FFFFFF;">
                                         <center>
-                                            <i>
-                                                <div style="margin-bottom: 12px">@ 2020 Prof. Felix G. Hamza-Lup</i>
+                                                <div style="margin-bottom: 12px">
+                                                    <i>@ 2020 Prof. Felix G. Hamza-Lup</i>
                                                     <img style="position: relative; top: 6.5px;" src=thumbnails/team/gslo.png></img>
                                                 </div>
                                         </center>
@@ -124,11 +87,10 @@ $db_handle = new DBController();
                             </table>
                         </center>    
                         <br/>
-                    </center>
-                </td>
-            </tr>
-        </table>
-    </center>
-    <br/>	
+                    </td>
+                </tr>
+            </table>
+        </center>
+        <br/>
 	</body>
 </html>

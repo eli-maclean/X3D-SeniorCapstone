@@ -13,13 +13,17 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-  <Viewpoint
-    position='-0.08 0.25 8.0'
-    orientation='0.0 0.0 1.0 0.0'
-    fieldOfView='0.1'
-    description='Entry View'/>
+	<!--
+	<Shape>
+		<Sphere radius='2.3'/>
+			<Appearance>
+			<Material diffuseColor='1.0 0.0 0.0'/>
+			</Appearance>
+	</Shape>
+	-->	
+  <Viewpoint position='-0.08 0.25 20.0' orientation='0.0 0.0 1.0 0.0' fieldofview='1.25' description='Entry View'/>
     <WorldInfo title='BonesRightTibiaFibula.x3d'/>
-    <Transform DEF='DSkeletonParts' scale='0.029 0.029 0.029'>
+    <Transform DEF='DSkeletonParts' translation='3.0 -9.0 2.0'>
       <Group DEF='rtibfib'>
         <!-- rtibia rfibia -->
         <Shape DEF='rtibia'>
