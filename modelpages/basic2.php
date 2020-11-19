@@ -99,7 +99,16 @@ $mysqli = $db_handle->connectDB();
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Scroll.png"></img>Zoom</td>
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Press.png"></img>Pan</td></tr>
 												</table>
-											</div>
+                                            </div>
+                                            <div class="sidebar2">
+				                                <h2>Finger Controls:</h2>
+				                                <table id="fingerTable">
+					                                <tr id="fingerpinchzooms"><td><img src="FingerImages/Finger_PinchZoom.png"></img></td><td id="fingerpinch">Pinch outward to zoom out</td></tr>
+					                                <tr id="fingerpinchzooms2"><td><img src="FingerImages/Finger_PinchZoom2.png"></img></td><td id="fingerpinch2">Pinch inward to zoom in</td></tr>
+					                                <tr id="fingerpancam"><td><img src="FingerImages/Finger_PanCamera.png"></img></td><td id="fingerpan">Use finger(s) to rotate model</td></tr>
+				                                </table>
+				
+			                                </div>
                                             <div class="maxwrap">
                                                 <div class="x3dbasic">
                                                     <X3DCanvas id="x3dScene" src="<?php echo $model_row[0]["x3d-loc"];?>">
