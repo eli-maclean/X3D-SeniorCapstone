@@ -55,6 +55,14 @@ h4 {
 	font-family: sans-serif;
 }
 
+h5 {	
+	text-align: center;
+	text-decoration: underline;
+	text-transform: uppercase;
+	margin-bottom: 1px;
+	margin-top: 8px;
+}
+
 table {
 	border: 2px solid #4b6373;
 	background-color: #cacdd0;
@@ -241,6 +249,19 @@ button.fake:hover {
 	position: relative;
 }
 
+.center2 {
+	margin: auto;
+	padding: 10px;
+	border: 0px solid black;
+	overflow: hidden;
+	height: 1100px;
+	width: 1000px;
+	overflow: hidden;
+	background: #222;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+}
+
 .centerbrain {
 	margin: auto;
 	padding: 10px;
@@ -269,12 +290,24 @@ button.fake:hover {
 }
 
 .sidebar {
+
+    float: right;
+    color: #DDD;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 250px;
+    position: static;
+    display: block;
+    transform: translate(-3%,-89.5%);
+}
+
+.sidebar2 {
 	float: right;
-	color: #DDD;
-	font-family: Arial, Helvetica, sans-serif;
-	width: 300px;
-	position: static;
-	display: block;
+    color: #DDD;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 250px;
+    position: static;
+    display: block;
+    transform: translate(-3%,-65%);
 }
 .topbar {
 	background-color: grey;
@@ -285,7 +318,19 @@ button.fake:hover {
     display: block;
     left: 13%;
     border-radius: 6px;
-	padding-left: 38;
+	padding-left: 38px;
+}
+
+.topbar2 {
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    height: 175px;
+    position: absolute;
+    display: block;
+    left: 1%;
+    border-radius: 6px;
+    padding-left: 38px;
 }
 
 .percentage {
@@ -301,14 +346,16 @@ button.fake:hover {
 }
 
 .x3d {
-    float: left;
-	overflow: hidden;
-	border: 1px solid black;
-	padding-top: 25 px;
-	display: block;
-	position: absolute;
-	top: 50%; left: 43%;
-	transform: translate(-57%,-50%);
+	float: left;
+    overflow: hidden;
+    border: 1px solid black;
+    padding: 25 px;
+    display: block;
+    position: absolute;
+    top: 61%;
+    left: 56%;
+    transform: translate(-77%,-50%);
+    border-radius: 10px 10px 10px 10px;
 }
 
 .x3dbrain {
@@ -322,11 +369,18 @@ button.fake:hover {
 	transform: translate(-57%,-50%);
 }
 
-#skullScene {
+#decomposableScene {
+	position: relative;
+	border: 1px solid white;
+	width: 700px;
+	height: 600px;
+}
+
+#x3dScene {
 	position: relative;
 	border: 1px solid white;
 	width: 900px;
-	height: 700px;
+	height: 600px;
 }
 
 .x3dbasic {
@@ -339,8 +393,6 @@ button.fake:hover {
 	top: 61%; left: 56%;
 	transform: translate(-57%,-50%);
 	border-radius: 10px 10px 10px 10px;
-	width: 900px; 
-	height: 600px;
 }
 
 .dropdown {
