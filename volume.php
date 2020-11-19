@@ -30,10 +30,10 @@ $db_handle = new DBController();
                                         <center>
                                             <table class=wrt>
                                                 <tr>
-													<td class=wrf><a class=wrf href=3dmodels.php>Models</a></td>
-                                                    <td class=wrf><a class=wrf href=basic.php>Basic</a></td>
-                                                    <td class=wrf><a class=wrf href=decomposable.php>Decomposable</a></td>
-                                                    <td class=wrf><a class=wrf href=volume.php>Volume</a></td>
+                                                    <td class=wrf><a class=wrf href=3dmodels.php>Model Types</a></td>
+                                                    <td class=wrf><a class=wrf href=basic.php>Basic 3D Models</a></td>
+                                                    <td class=wrf><a class=wrf href=decomposable.php>Decomposable 3D Models</a></td>
+                                                    <td class=wrf><a class=wrf href=volume.php>Volumetric 3d Models</a></td>
                                                 </tr>
                                             </table>
                                         </center>
@@ -42,13 +42,13 @@ $db_handle = new DBController();
                             </table>
 							
               <center>
-                        <h2 style="color: white;">Volumetric Models</h2>
+                        <h2 style="color: white;">Volumetric 3D Models</h2>
                         <hr>
                         <table style="width:77%"> 
 							<table style="width:80%"> 
 									<tr>
 										
-											<center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
+											<center><h3 style="color: white;"><i>Select the tile of the model you would like to view</i></h3><center>
 											
 											
                                             <div class="allcategories">

@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+require_once("../dbcontroller.php");
+$db_handle = new DBController();
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -31,7 +35,7 @@
                                                                                         ?>
 
                                                                                             <div class="titlename">
-                                                                                                <form action="brain.php" method = "get">
+                                                                                                <form action="skull.php" method = "get">
                                                                                                     <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
                                                                                                     <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
                                                                                                     <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
