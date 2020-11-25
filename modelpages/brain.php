@@ -25,29 +25,36 @@ $db_handle = new DBController();
 										<center>
 											<table class=wrt>
 												<tr>
-														<td class=wrf><a class=wrf title="" href=index.html>Previous</a></td>
-														<td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/active/3dmodels.php"> Home </a></td>
-														<td class=wrf> <div class="dropdown"> <a class=wrt href=../decomposable.php> Decomposable </a> 
+														<td class=wrf><a class=wrf title="" href="">Previous</a></td>
+														<td class=wrf><a class=wrf title="" href="../decomposable.php"> Decomposable Home </a></td>
+														<td class=wrf> <div class="dropdown"> <a class=wrt href=../decomposable.php> Decomposable Models</a> 
 																				<div class="dropdown-content">
                                                                                 <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'decomposable'");
                                                                     if (!empty($product_array)) {
-                                                                                foreach($product_array as $key=>$value){
+                                                                                //foreach($product_array as $key=>$value){ <--uncomment this to iterate through product_array
                                                                                         ?>
-
+																							<!--change $product_array[0]["x3d-loc"] back to $product_array[$key]["x3d-loc"]...-->
                                                                                             <div class="titlename">
                                                                                                 <form action="brain.php" method = "get">
-                                                                                                    <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
-                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                                                    <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                                                    <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[0]["x3d-loc"]; ?>">
+                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[0]["name"]; ?>">
+                                                                                                    <input type="submit" value="<?php echo $product_array[0]["name"]; ?>">
                                                                                                 </form>
-
+																							</div>
+																							<!--the following section needs to be deleted once this page is set up to dynamically generate like basic and volumetric-->
+																							<div class="titlename">
+                                                                                                <form action="skull.php" method = "get">
+                                                                                                    <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[1]["x3d-loc"]; ?>">
+                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[1]["name"]; ?>">
+                                                                                                    <input type="submit" value="<?php echo $product_array[1]["name"]; ?>">
+                                                                                                </form>
                                                                                             </div><?php
-                                                                                                                    }
+                                                                                                                    //}
                                                                                                                 }?>
                                                                                 </div>
                                                                         </div>
 																		</td>
-																		<td class=wrf><a class=wrf title="" href=3dmodels.php>Next</a></td>
+																		<td class=wrf><a class=wrf title="" href="skull.php">Next</a></td>
 																	</tr>
 																</table>
 															</center>

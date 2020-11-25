@@ -62,9 +62,7 @@ $db_handle = new DBController();
                                                                 </div>
                                                                 <div class="titlename">
                                                                     <form action="modelpages/volume2.php" method = "get">
-                                                                        <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
-                                                                        <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                        <input type="hidden" name="type"  value="<?php echo $product_array[$key]["type"]; ?>">
+                                                                    <input type="hidden" name="id"  value="<?php echo $product_array[$key]["id"]; ?>">
                                                                         <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
                                                                 </div>

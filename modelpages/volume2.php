@@ -2,6 +2,9 @@
 session_start();
 require_once("../dbcontroller.php");
 $db_handle = new DBController();
+$id = $_GET["id"];
+$model_row = $db_handle->runQuery("SELECT * FROM models where id = $id");
+$mysqli = $db_handle->connectDB();
 ?>
 <html>
 	
@@ -36,31 +39,46 @@ $db_handle = new DBController();
                                     <center>
                                         <table class=wrt>
                                             <tr>
-													<td class=wrf><a class=wrf title="" href=index.html>Previous</a></td>
-                                                    <td class=wrf><a class=wrf title="" href="http://web-students.armstrong.edu/~em07614/active/3dmodels.php"> Home </a></td>
-                                                    <td class=wrf> <div class="dropdown"> <a class=wrt href=../volume.php> Volumetric </a>
-                                                                                <div class="dropdown-content">
-                                                                                <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'volume'");
-                                                                    if (!empty($product_array)) {
-                                                                                foreach($product_array as $key=>$value){
-                                                                                    if ($product_array [$key]["type"]=="volume"){
-                                                                                        ?>
+													<td class=wrf><?php                                 // Back button 
+                                                        $back = mysqli_query($mysqli,"SELECT * FROM models WHERE id<$id AND type = 'volume' order by id DESC");
+                                                        if($row = mysqli_fetch_array($back))
+                                                            {
+                                                                echo '<a class=wrf title="" href="volume2.php?id='.$row['id'].'">Back</a>';  
+                                                            } else {
+                                                                echo '<a class=wrf title="" href="">Back</a>';
+                                                            }
+                                                    ?></td>
+                                                    <td class=wrf><a class=wrf title="" href="../volume.php"> Volumetric Home </a></td>
+                                                    <td class=wrf> 
+                                                        <div class="dropdown"> 
+                                                            <a class=wrt href=../volume.php> Volumetric Models</a>
+                                                            <div class="dropdown-content">
+                                                                <?php $dd_list = $db_handle->runQuery("SELECT * FROM models where type = 'volume'");
+                                                                if (!empty($dd_list)) {
+                                                                    foreach($dd_list as $key=>$value){
+                                                                        if ($dd_list [$key]["type"]=="volume"){ ?>
+                                                                            <div class="titlename">
+                                                                                <form action="volume2.php" method = "get">
+                                                                                    <input type="hidden" name="id"  value="<?php echo $dd_list[$key]["id"]; ?>">
+                                                                                    <input type="submit" value="<?php echo $dd_list[$key]["name"]; ?>">
+                                                                                </form>
 
-                                                                                            <div class="titlename">
-                                                                                                <form action="volume2.php" method = "get">
-                                                                                                    <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
-                                                                                                    <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                                                    <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
-                                                                                                </form>
-
-                                                                                        </div><?php
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                }?>
-                                                                                </div>
-                                                                                </div>
+                                                                            </div>
+                                                                <?php   }
+                                                                    }
+                                                                } ?>
+                                                            </div>
+                                                        </div>
                                                     </td>
-													<td class=wrf><a class=wrf title="" href=3dmodels.php>Next</a></td>
+													<td class=wrf><?php                                 // Next button 
+                                                        $next = mysqli_query($mysqli,"SELECT * FROM models WHERE id>$id AND type = 'volume' order by id ASC");
+                                                        if($row = mysqli_fetch_array($next))
+                                                            {
+                                                                echo '<a class=wrf title="" href="volume2.php?id='.$row['id'].'">Next</a>';  
+                                                            } else {
+                                                                echo '<a class=wrf title="" href="">Next</a>';
+                                                            }
+                                                    ?></td>
                                             </tr>
                                         </table>
                                     </center>
@@ -69,25 +87,36 @@ $db_handle = new DBController();
                         </table>
                 
                         <center>
-                        <h2 style="color: white;"><?php echo $_GET["name"];?></h2>
+                        <h2 style="color: white;"><?php echo $model_row[0]["name"];?></h2>
                         <hr>
                         <table class=mouseTable> 
                             <table class=mouseTable> 
                                 <tr>
                                     <td>
 										<div class="center">
-											<div class="topbar">
+                                        <div class="desktop-topbar" id=”content-desktop”>
 												<h4 style>Mouse Controls:</h4>
 													<table class=mouseTable>
 													<tr> <td class=mouseTable> <img src="MouseImages/Mouse_Left.png"></img>Rotate</td>
-													<td class=mouseTable> <img src="MouseImages/Mouse_Right.png"></img>Zoom</td>
+													<td class=mouseTable> <img src="MouseImages/Mouse_Right.png"></img>Menu</td>
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Scroll.png"></img>Zoom</td>
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Press.png"></img>Pan</td></tr>
 												</table>
-											</div>
+                                            </div>
+                                            <div class="mobile-topbar" id=”content-mobile”>
+                                                <h2>Touch Controls:</h2>
+                                                <table class=fingerTable id="fingerTable">
+                                                    <tr> 
+                                                        <td class=fingerTable> <img src="FingerImages/zoomin.jpg"></img>Zoom in</td>
+                                                        <td class=fingerTable> <img src="FingerImages/zoomout.jpg"></img>Zoom out</td>
+                                                        <td class=fingerTable> <img src="FingerImages/onefinger.jpg"></img>Rotate</td>
+                                                        <td class=fingerTable> <img src="FingerImages/twofinger.jpg"></img>Pan</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                             <div class="maxwrap">
                                                 <div class="x3dbasic">
-                                                    <X3DCanvas id="x3dScene" src="<?php echo $_GET["x3d-loc"];?>">
+                                                    <X3DCanvas id="x3dScene" src="<?php echo $model_row[0]["x3d-loc"];?>">
                                                         <p>Your browser may not support all features required by X_ITE.
                                                         For a better experience, keep your browser up to date.
                                                         <a href="http://outdatedbrowser.com">Check here for latest versions.</a></p>
