@@ -15,7 +15,7 @@
   <Scene>
     <WorldInfo title='BonesMandible.x3d'/>
     <Transform DEF='MandibleSkeletonParts' scale='0.029 0.029 0.029'>
-      <Viewpoint DEF='Head' description='Hips' orientation='0.0 0.0 1.0 0.0' position='0 55 25'/>
+       <Viewpoint DEF='Head' description='Hips' position='0 55 25'/>
       <Group DEF='Manible'>
         <!-- lacl lacr frontal ethmoid ethmoid2 inconl inconr mand maxl maxr nasall nasalr occip palatl palatr parietl parietr sphenoid templ tempr vom zygol zygor -->
         <!-- atlas axis c2disc c3 c3disc c4 -->

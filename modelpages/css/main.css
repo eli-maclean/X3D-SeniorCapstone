@@ -44,8 +44,23 @@ h3 {
 }
 
 h4 {
+	color: #36414e;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	text-align: center
+} 
+
+h4 {
 	color: white;
 	font-family: sans-serif;
+}
+
+h5 {	
+	text-align: center;
+	text-decoration: underline;
+	text-transform: uppercase;
+	margin-bottom: 1px;
+	margin-top: 8px;
 }
 
 table {
@@ -79,6 +94,11 @@ table.mpg {
 	background-color: #60acdb;
 }
 
+table.mouseTable{
+	background-color: rgb(207, 207, 207);
+	border: 0px
+}
+
 table.mpf { 
 	border: 0px solid #FFFFFF;
 	width: 80%;
@@ -94,7 +114,7 @@ td.wrt {
 	padding: 10;
 	background-color: #0093ed;
     border: 3px solid #4b6373;
-    width:20%;
+    width:16.66%;
 	text-align: center;
 }
 
@@ -178,26 +198,26 @@ button.fake:hover {
 }
 
 .cell {
-			display:block;
-			float: left;
+	display:block;
+	float: left;
 	background: #ffffff;
 	margin: 15px 0px 30px 30px;
 	border: #E0E0E0 1px solid;
 
  }
 		 
-.thumbnail{
-	height: 155px;
+/*.thumbnail{
+	 height: 155px;
 	width: 250px;
 	background-color: #FFF;
+	border:1px solid black; 
 
-	border:1px solid black;
-	
-	
-}
+	removing for possible css changes 
+}*/
 		
 .titlename {
-	padding: 15px 15px 0px 15px;
+	/* padding: 15px 15px 0px 15px;
+	removing padding for possible css changes */
 	overflow: auto;
 	text-align: center;
 	background-color: #D4D4D4; 
@@ -214,4 +234,201 @@ button.fake:hover {
 .cc img {
 	width: 125%;
     height: 125%;
+}
+
+.center {
+	margin: auto;
+	padding: 10px;
+	border: 0px solid black;
+	overflow: hidden;
+	height: 800px;
+	width: 1000px;
+	overflow: hidden;
+	background: #222;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+}
+
+.center2 {
+	margin: auto;
+	padding: 10px;
+	border: 0px solid black;
+	overflow: hidden;
+	height: 1100px;
+	width: 1000px;
+	overflow: hidden;
+	background: #222;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+}
+
+.centerbrain {
+	margin: auto;
+	padding: 10px;
+	padding-bottom: 100px;
+	border: 1px solid black;
+	overflow: hidden;
+	width: 1300px;
+	overflow: hidden;
+	margin-bottom: 30px;
+	background: #222;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+}
+
+
+.maxwrap {
+	float: left;
+	margin: auto;
+	width: 1000px;
+	height: 700px;
+}
+
+.slider {
+	margin-right: 20px;
+	width: 75%;
+}
+
+.sidebar {
+
+    float: right;
+    color: #DDD;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 250px;
+    position: static;
+    display: block;
+    transform: translate(-3%,-89.5%);
+}
+
+.sidebar2 {
+	float: right;
+    color: #DDD;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 250px;
+    position: static;
+    display: block;
+    transform: translate(-3%,-65%);
+}
+.desktop-topbar {
+	background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    height: 175px;
+    position: absolute;
+    display: block;
+    left: 13%;
+    border-radius: 6px;
+	padding-left: 38px;
+}
+
+.mobile-topbar {
+	background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    height: 175px;
+    position: absolute;
+    display: none;
+    left: 13%;
+    border-radius: 6px;
+	padding-left: 38px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	.desktop-topbar {display: none;}
+	.mobile-topbar {display: block;}
+
+}
+
+.topbar2 {
+    background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    height: 175px;
+    position: absolute;
+    display: block;
+    left: 1%;
+    border-radius: 6px;
+    padding-left: 38px;
+}
+
+.percentage {
+	position: absolute;
+	padding: 2px;
+	margin-top: 4px;
+}
+
+.ctGuts {
+	position:relative;
+	background-color: #333;
+	padding: 5px;
+}
+
+.x3d {
+	float: left;
+    overflow: hidden;
+    border: 1px solid black;
+    padding: 25 px;
+    display: block;
+    position: absolute;
+    top: 61%;
+    left: 56%;
+    transform: translate(-77%,-50%);
+    border-radius: 10px 10px 10px 10px;
+}
+
+.x3dbrain {
+    float: left;
+	overflow: hidden;
+	border: 1px solid black;
+	padding-top: 25 px;
+	display: block;
+	position: absolute;
+	top: 57%; left: 43%;
+	transform: translate(-57%,-50%);
+}
+
+#decomposableScene {
+	position: relative;
+	border: 1px solid white;
+	width: 700px;
+	height: 600px;
+}
+
+#x3dScene {
+	position: relative;
+	border: 1px solid white;
+	width: 900px;
+	height: 600px;
+}
+
+.x3dbasic {
+    float: left;
+	overflow: hidden;
+	border: 1px solid black;
+	padding: 25 px;
+	display: block;
+	position: absolute;
+	top: 61%; left: 56%;
+	transform: translate(-57%,-50%);
+	border-radius: 10px 10px 10px 10px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 6px 8px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

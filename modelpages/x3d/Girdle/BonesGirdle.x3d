@@ -13,7 +13,8 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <Viewpoint description='Entry View' fieldOfView='0.1' orientation='0.0 0.0 1.0 0.0' position='0.0 0.90 5.0'/>
+     <Viewpoint id="front" position="-0.07427 0.95329 -2.79608" orientation="-0.01451 0.99989 0.00319 3.15833" description="camera"></Viewpoint>
+        <Viewpoint id="right" position="-2.43383 1.07351 -1.28700" orientation="-0.00318 -0.99950 -0.03159 2.06609" description="camera"></Viewpoint>
     <WorldInfo title='BonesGirdle.x3d'/>
     <Transform DEF='GirdleSkeletonParts' scale='0.029 0.029 0.029'>
       <Group DEF='Girdle'>
