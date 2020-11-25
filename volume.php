@@ -63,7 +63,7 @@ $db_handle = new DBController();
                                                                 <div class="titlename">
                                                                     <form action="modelpages/volume2.php" method = "get">
                                                                     <input type="hidden" name="id"  value="<?php echo $product_array[$key]["id"]; ?>">
-                                                                        <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                    <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
                                                                 </div>
                                                             </div><?php
