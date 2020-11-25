@@ -1,29 +1,25 @@
 <?php
 //<<A lot of this code is similar to the signup.inc.php so there will be less comments.>>
 if (isset($_POST['login'])) {
-  require 'dbh.inc.php';
+  require_once("../dbcontroller.php");
+  $db_handle = new DBController();
+  $conn = $db_handle->connectDB();
 
   //Taking the variables the user gave to us for an attempted login.
   $mailuid = $_POST['mailuid'];
   $password = $_POST['pwd'];
 
   //Checking to see if the email or password was empty
-  if (empty($mailuid) || empty($password)){
-    //Sends them back to index.php
-    header("Location: ../feedback.php?error=emptyfields");
-    exit();
-  }
-  else {
+  if (isset($mailuid) && isset($password)){
     //Allows login from either username or email.
     $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
     //Initilizes connection from dbh.inc.php
     $stmt = mysqli_stmt_init($conn);
     //Essentially error checking if the above SQL statement works with the database.
     if(!mysqli_stmt_prepare($stmt, $sql)){
-      header("Location: ../feedback.php?error=sqlerror");
-      exit();
-    }
-    else {
+        header("Location: ../feedback.php?error=sqlerror");
+        exit();
+      }else {
       //Passing the inputted user data to the database. "ss" for two strings. Then executes.
       mysqli_stmt_bind_param($stmt, "ss", $mailuid, $mailuid);
       mysqli_stmt_execute($stmt);
@@ -54,7 +50,7 @@ if (isset($_POST['login'])) {
         //While it should be impossible not to get 'true or false,' this is essentially a catch all.
         //You don't want the catch all to be a successful login.
         else {
-          header("Location: ../feedback.php?error=incorrectpwd");
+          header("Location: ../feedback.php?error=verificationerror");
           exit();
         }
       }

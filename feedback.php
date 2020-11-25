@@ -58,7 +58,7 @@ if($_POST["message"])
                                       //Could very easily add the entire Feedback system behind the login in system. That way you could only send feedback if you're logged in.
                                       //While logged in - user login form & login button are currentlyhidden.
                                       if(isset($_SESSION['userId'])){
-                                        echo 'You are logged in.
+                                        echo 'Hello '.$_SESSION["userUid"].'. You are logged in.
                                         <form action="includes/logout.inc.php" method="post">
                                           <button type="submit" name="logout">Logout</button>
                                         </form>';
@@ -66,11 +66,26 @@ if($_POST["message"])
                                       else {
                                         //If not logged in - logout button is hidden. Everything else is shown.
                                        echo '<form action="includes/login.inc.php" method="post">
-                                         <input type="text" name="mailuid" placeholder="Username/E-mail...">
-                                         <input type="password" name="pwd" placeholder="Password...">
+                                         <input type="text" name="mailuid" placeholder="Username/E-mail..." required>
+                                         <input type="password" name="pwd" placeholder="Password..." required>
                                          <button type="submit" name="login">Login</button>
-                                        </form>
-                                        <a href="signup.php">Signup</a>';
+                                        </form>';
+                                        //Checking for the error code inside the browser URL we added earlier from signup.inc.php. Then gives a message if one is there.
+                                        //More error codes can be added here.
+                                        if (isset($_GET['error'])){
+                                            if ($_GET['error'] == "incorrectpwd"){
+                                                echo '<p> Incorrect password </p>';
+                                            }else if ($_GET['error'] == "sqlerror"){
+                                                echo '<p> Error fetching database results </p>';
+                                            }
+                                            else if ($_GET['error'] == "verificationerror"){
+                                                echo '<p> Error validating password </p>';
+                                            }
+                                            else if ($_GET['error'] == "nouser"){
+                                                echo '<p> Please create an account first </p>';
+                                            }
+                                        }
+                                        echo '<a href="signup.php">Signup</a>';
 
                                      }
                                       ?>

@@ -4,7 +4,9 @@
 if (isset($_POST['signup'])){
 
   //links database to this page
-  require 'dbh.inc.php';
+  require_once("../dbcontroller.php");
+  $db_handle = new DBController();
+  $conn = $db_handle->connectDB();
 
   //require dbcontroller.php;
   //$db_handle = new DBController();
@@ -16,26 +18,10 @@ if (isset($_POST['signup'])){
   $passwordRepeat = $_POST['pwd-2'];
 
   //Below is basic error checking methods for when the user is trying to sign up
-  //if the username, or email, or password is empty...
-  if(empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
-    //Then return user back to the sign in page and carry the inputted username/email back to URL in the browser
-    header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
-    //exit method stops script from running
-    exit();
-  }
-
-  //(((This error check currently does not work and I'm not sure why. Left in for future attempts.)))
+  
   //Checking to see if the email is valid. FILTER_VALIDATE_EMAIL does this automatically.
-  else if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
     header("Location: ../signup.php?error=invalidmail&uid=".$username);
-    exit();
-  }
-
-
-  //Checks to see if username is valid
-  //Checks and only allows characters a-z, A-Z, and 0-9 for the username
-  else if (!preg_match("/^[a-zA-Z0-9]*$/", $username)){
-    header("Location: ../signup.php?error=invaliduid&mail=".$email);
     exit();
   }
 
@@ -78,7 +64,7 @@ if (isset($_POST['signup'])){
         //Next couple lines all copied and pasted from earlier. No new comments.
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)){
-          header("Location: ../signup.php?error=sqlerror");
+          header("Location: ../signup.php?error=accounterror");
           exit();
       }
       else {
@@ -91,14 +77,35 @@ if (isset($_POST['signup'])){
         //Three "s" this time as its 3 string parameters.
         mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
         mysqli_stmt_execute($stmt);
-        header("Location: ../feedback.php?success");
-        exit();
+
+        $sql = "SELECT * FROM users WHERE uidUsers=?";
+        $stmt = mysqli_stmt_init($conn);
+        //Essentially error checking if the above SQL statement works with the database.
+       if(!mysqli_stmt_prepare($stmt, $sql)){
+       header("Location: ../feedback.php?error=loginerror");
+       exit();
+        }
+        else{
+          //Passing the inputted user data to the database. "s" for two strings. Then executes.
+          mysqli_stmt_bind_param($stmt, "s", $username);
+          mysqli_stmt_execute($stmt);
+
+          $result = mysqli_stmt_get_result($stmt);
+          //Checking to see if we have results, then assigning it to a variable.
+          if ($row = mysqli_fetch_assoc($result)){
+            session_start();
+          //Session variable only avaliable for the lenghth of the session.
+          //Getting variable from the respective $rows inside the database
+          $_SESSION['userId'] = $row['idUsers'];
+          $_SESSION['userUid'] = $row['uidUsers'];
+
+          header("Location: ../feedback.php?login=success");
+          exit();
+          }
+        }
       }
-
     }
-
   }
-
 }
 //Closes off the statements & closes connection to database.
 mysqli_stmt_close($stmt);
