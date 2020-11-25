@@ -13,9 +13,19 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
+
     <WorldInfo title='BonesRightFoot.x3d'/>
-    <Transform DEF='RightFootSkeletonParts' scale='0.029 0.029 0.029'>
-       <Viewpoint id="right" position="-2.43383 1.07351 -1.28700" orientation="-0.00318 -0.99950 -0.03159 2.06609" description="camera"></Viewpoint>
+
+    <!-- Sphere for troubleshooting.
+    <Shape>
+      <Sphere radius='2.3'/>
+      <Appearance>
+        <Material diffuseColor='1.0 0.0 0.0'/>
+      </Appearance>
+    </Shape> -->
+
+    <Transform DEF='RightFootSkeletonParts' translation='3 0 -1'>
+       <Viewpoint id="right" position="-23 2.5 -15" orientation="-0.00318 -0.99950 -0.03159 2.06609" description="camera"></Viewpoint>
       <Group DEF='RightFoot'>
         <!-- rtalus rcalc rcuboid rlcun rmcun rnaviclr [missingsomething] rfmet rmet2 rmet3 rmet4 rmet5 rfprox rfpprox2 rfpprox3 rfpprox4 rfpprox5 rfmphal rfmphal2 rfmphal3 rfmphal4 rfdphal rfdphal2 rfdphal3 rfdphal4 rfdphal5 -->
         <Shape DEF='rtalus'>

@@ -1,5 +1,6 @@
 <?php
-if($_POST["message"]) 
+session_start();
+if($_POST["message"])
 {
     mail("medx3d@gmail.com", $_POST["subject"],$_POST["message"]."<--This message was collected from the Medical X3D Repository feedback system and sent by the web-students.armstrong.edu apache server.");
     echo '<script>alert("Feedback has been recieved")</script>';
@@ -13,7 +14,7 @@ if($_POST["message"])
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel='stylesheet' type='text/css' href='modelpages/css/main.css'/>
-		<title>3D Models Types</title>
+		<title>Feedback</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">  
     </head>
     <body>
@@ -49,11 +50,50 @@ if($_POST["message"])
                             <center>
                             <h2 style="color: white;">Feedback</h2>
                             <hr>
-                            <table style="width:77%"> 
+                            <table style="width:77%">
                                 <table style="width:80%" cellpadding="10">
+                                  <tr>
+                                    <td>
+                                      <?php
+                                      //Could very easily add the entire Feedback system behind the login in system. That way you could only send feedback if you're logged in.
+                                      //While logged in - user login form & login button are currentlyhidden.
+                                      if(isset($_SESSION['userId'])){
+                                        echo 'Hello '.$_SESSION["userUid"].'. You are logged in.
+                                        <form action="includes/logout.inc.php" method="post">
+                                          <button type="submit" name="logout">Logout</button>
+                                        </form>';
+                                      }
+                                      else {
+                                        //If not logged in - logout button is hidden. Everything else is shown.
+                                       echo '<form action="includes/login.inc.php" method="post">
+                                         <input type="text" name="mailuid" placeholder="Username/E-mail..." required>
+                                         <input type="password" name="pwd" placeholder="Password..." required>
+                                         <button type="submit" name="login">Login</button>
+                                        </form>';
+                                        //Checking for the error code inside the browser URL we added earlier from signup.inc.php. Then gives a message if one is there.
+                                        //More error codes can be added here.
+                                        if (isset($_GET['error'])){
+                                            if ($_GET['error'] == "incorrectpwd"){
+                                                echo '<p> Incorrect password </p>';
+                                            }else if ($_GET['error'] == "sqlerror"){
+                                                echo '<p> Error fetching database results </p>';
+                                            }
+                                            else if ($_GET['error'] == "verificationerror"){
+                                                echo '<p> Error validating password </p>';
+                                            }
+                                            else if ($_GET['error'] == "nouser"){
+                                                echo '<p> Please create an account first </p>';
+                                            }
+                                        }
+                                        echo '<a href="signup.php">Signup</a>';
+
+                                     }
+                                      ?>
+                                    </td>
+                                  </tr>
                                     <tr>
                                         <td>
-                                            This is an ever expanding project and we welcome all comments, suggestions, and feedback. 
+                                            This is an ever expanding project and we welcome all comments, suggestions, and feedback.
                                             Please feel free to share your experiences and suggestions for improvements with us in the fields provided.
                                         </td>
                                     </tr>
@@ -82,7 +122,7 @@ if($_POST["message"])
                                         </td>
                                     </tr>
                                 </table>
-                            </center>    
+                            </center>
                             <br/>
                         </center>
                     </td>
@@ -92,5 +132,3 @@ if($_POST["message"])
         <br/>
 	</body>
 </html>
-
-			
