@@ -91,24 +91,26 @@ $mysqli = $db_handle->connectDB();
                                 <tr>
                                     <td>
 										<div class="center">
-											<div class="topbar">
+											<div class="desktop-topbar" id=”content-desktop”>
 												<h4 style>Mouse Controls:</h4>
 													<table class=mouseTable>
 													<tr> <td class=mouseTable> <img src="MouseImages/Mouse_Left.png"></img>Rotate</td>
-													<td class=mouseTable> <img src="MouseImages/Mouse_Right.png"></img>Zoom</td>
+													<td class=mouseTable> <img src="MouseImages/Mouse_Right.png"></img>Menu</td>
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Scroll.png"></img>Zoom</td>
 													<td class=mouseTable> <img src="MouseImages/Mouse_Wheel_Press.png"></img>Pan</td></tr>
 												</table>
                                             </div>
-                                            <div class="sidebar2">
-				                                <h2>Finger Controls:</h2>
-				                                <table id="fingerTable">
-					                                <tr id="fingerpinchzooms"><td><img src="FingerImages/Finger_PinchZoom.png"></img></td><td id="fingerpinch">Pinch outward to zoom out</td></tr>
-					                                <tr id="fingerpinchzooms2"><td><img src="FingerImages/Finger_PinchZoom2.png"></img></td><td id="fingerpinch2">Pinch inward to zoom in</td></tr>
-					                                <tr id="fingerpancam"><td><img src="FingerImages/Finger_PanCamera.png"></img></td><td id="fingerpan">Use finger(s) to rotate model</td></tr>
-				                                </table>
-				
-			                                </div>
+                                            <div class="mobile-topbar" id=”content-mobile”>
+                                                <h2>Touch Controls:</h2>
+                                                <table class=fingerTable id="fingerTable">
+                                                    <tr> 
+                                                        <td class=fingerTable> <img src="FingerImages/zoomin.jpg"></img>Zoom in</td>
+                                                        <td class=fingerTable> <img src="FingerImages/zoomout.jpg"></img>Zoom out</td>
+                                                        <td class=fingerTable> <img src="FingerImages/onefinger.jpg"></img>Rotate</td>
+                                                        <td class=fingerTable> <img src="FingerImages/twofinger.jpg"></img>Pan</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                             <div class="maxwrap">
                                                 <div class="x3dbasic">
                                                     <X3DCanvas id="x3dScene" src="<?php echo $model_row[0]["x3d-loc"];?>">

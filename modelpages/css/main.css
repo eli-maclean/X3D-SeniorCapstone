@@ -309,7 +309,7 @@ button.fake:hover {
     display: block;
     transform: translate(-3%,-65%);
 }
-.topbar {
+.desktop-topbar {
 	background-color: grey;
     font-family: Arial, Helvetica, sans-serif;
     width: 700px;
@@ -319,6 +319,26 @@ button.fake:hover {
     left: 13%;
     border-radius: 6px;
 	padding-left: 38px;
+}
+
+.mobile-topbar {
+	background-color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 700px;
+    height: 175px;
+    position: absolute;
+    display: none;
+    left: 13%;
+    border-radius: 6px;
+	padding-left: 38px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	.desktop-topbar {display: none;}
+	.mobile-topbar {display: block;}
+
 }
 
 .topbar2 {
