@@ -28,10 +28,10 @@ $db_handle = new DBController();
                                         <center>
                                             <table class=wrt>
                                                 <tr>
-													<td class=wrf><a class=wrf href=3dmodels.php>Models</a></td>
-                                                    <td class=wrf><a class=wrf href=basic.php>Basic</a></td>
-                                                    <td class=wrs><a class=wrf href=decomposable.php>Decomposable</a></td>
-                                                    <td class=wrf><a class=wrf href=volume.php>Volume</a></td>
+                                                    <td class=wrf><a class=wrf href=3dmodels.php>Model Types</a></td>
+                                                    <td class=wrf><a class=wrf href=basic.php>Basic 3D Models</a></td>
+                                                    <td class=wrf><a class=wrf href=decomposable.php>Decomposable 3D Models</a></td>
+                                                    <td class=wrf><a class=wrf href=volume.php>Volumetric 3d Models</a></td>
                                                 </tr>
                                             </table>
                                         </center>
@@ -40,31 +40,36 @@ $db_handle = new DBController();
                             </table>
 							
               <center>
-                        <h2 style="color: white;">Decomposable Models</h2>
+                        <h2 style="color: white;">Decomposable 3D Models</h2>
                         <hr>
-                        <table style="width:77%"> 
-							<table style="width:80%"> 
-									<tr>
-										
-											<center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
-								
-		<div class="allcategories"><?php
-			$product_array = $db_handle->runQuery("SELECT * FROM models");
-			if (!empty($product_array)) {
-				foreach($product_array as $key=>$value){
-					if ($product_array [$key]["type"]=="decomposable"){
-			?>
-											<div class="cell">
-													<div class="thumbnail"><a href="<?php echo $product_array[$key]["adr"]; ?>"><img src="<?php echo $product_array[$key]["thumbnail"]; ?>"></a></div>
-													<div class="titlename"><?php echo $product_array[$key]["name"]; ?></div>
-													</div>
-											<?php
-					}
-				}
-			}
-			?>
-		</div>
-		</table>
+                        <table style="width:80%"> <!--model grid-->
+                                    <tr>
+                                        <center><h3 style="color: white;"><i>Click on a model to view</i></h3><center>
+                                        <div class="allcategories">
+                                            <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'decomposable'");
+                                                if (!empty($product_array)) {
+                                                    foreach($product_array as $key=>$value){
+                                                        if ($product_array [$key]["type"]=="decomposable"){
+                                                            ?><div class="cell">
+                                                                <div class="thumbnail">
+                                                                    <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
+                                                                </div>
+                                                                <div class="titlename">
+                                                                    <form action= <?php echo $product_array[$key]["adr"]; ?> method = "get">
+                                                                        <input type="hidden" name="x3d-loc"  value="<?php echo $product_array[$key]["x3d-loc"]; ?>">
+                                                                        <input type="hidden" name="name"  value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                        <input type="hidden" name="type"  value="<?php echo $product_array[$key]["type"]; ?>">
+                                                                        <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
+                                                                    </form>
+                                                                </div>
+                                                            </div><?php
+                                                                                            }
+                                                                                        }
+                                                                                    }?>
+                                        </div>
+
+                                    </tr>
+                                </table>
                         </center>
                         <br/>
                         <center>
