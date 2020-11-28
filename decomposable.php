@@ -31,7 +31,7 @@ $db_handle = new DBController();
                                                     <td class=wrf><a class=wrf href=3dmodels.php>Model Types</a></td>
                                                     <td class=wrf><a class=wrf href=basic.php>Basic 3D Models</a></td>
                                                     <td class=wrf><a class=wrf href=decomposable.php>Decomposable 3D Models</a></td>
-                                                    <td class=wrf><a class=wrf href=volume.php>Volumetric 3d Models</a></td>
+                                                    <td class=wrf><a class=wrf href=volume.php>Volumetric 3D Models</a></td>
                                                 </tr>
                                             </table>
                                         </center>

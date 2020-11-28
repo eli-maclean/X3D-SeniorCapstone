@@ -49,7 +49,7 @@
 									<tr>
 										<th>Basic 3D Models</th>
 										<th>Decomposable 3D Models</th>
-										<th>Volumetric 3d Models</th>
+										<th>Volumetric 3D Models</th>
 									</tr>
 									<tr>
 										<td>
