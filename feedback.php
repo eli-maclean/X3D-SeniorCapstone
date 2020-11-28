@@ -2,12 +2,22 @@
 session_start();
 if($_POST["message"])
 {
-    mail("medx3d@gmail.com", $_POST["subject"],$_POST["message"]."<--This message was collected from the Medical X3D Repository feedback system and sent by the web-students.armstrong.edu apache server.");
-    echo '<script>alert("Feedback has been recieved")</script>';
+    if(isset($_POST["email"]))
+    {
+        mail("medx3d@gmail.com", $_POST["subject"],$_POST["message"]."<--This message was collected from the Medical X3D Repository feedback system and sent by the web-students.armstrong.edu apache server.");
+        mail($_POST["email"], $_POST["subject"],"Thank you, your feedback for the Medical X3D Repository has been recieved. Your message: ".$_POST["message"]);
+        echo '<script>alert("Feedback has been recieved")</script>';
+    }else{
+        mail("medx3d@gmail.com", $_POST["subject"],$_POST["message"]."<--This message was collected from the Medical X3D Repository feedback system and sent by the web-students.armstrong.edu apache server.");
+        echo '<script>alert("Feedback has been recieved")</script>';
+    }
 }
-
-
 ?>
+<script>
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
 <html>
 	<head>
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.7.1.js"></script>
@@ -85,7 +95,7 @@ if($_POST["message"])
                                                 echo '<p> Please create an account first </p>';
                                             }
                                         }
-                                        echo '<a href="signup.php">Signup</a>';
+                                        echo '<button onclick="document.location=\'signup.php\'">Signup</button>';
 
                                      }
                                       ?>
@@ -100,8 +110,8 @@ if($_POST["message"])
                                     <tr>
                                         <td>
                                             <form name="form1" method="post" action="feedback.php">
-                                                <input type="text" size="40" name="subject" placeholder="Subject"></br>
-                                                <textarea rows="8" cols="100" name="message" placeholder="Enter your feedback here..."></textarea>
+                                                <input type="text" size="40" name="subject" placeholder="Subject"><input type="text" size=40 name="email" placeholder="example@email.address (Optional)" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Used for feedback confirmation only. We do not collect your email address here."></br>
+                                                <textarea rows="8" cols="100" name="message" placeholder="Enter your feedback here. Login is not required."></textarea>
                                                 <input type="submit">
                                             </form>
                                         </td>
