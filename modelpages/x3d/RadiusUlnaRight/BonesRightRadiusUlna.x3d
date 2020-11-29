@@ -13,11 +13,20 @@
     <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-  <Viewpoint position='-0.2 1.0 5.0' orientation='0.0 0.0 1.0 0.0' fieldOfView='0.1' description='Entry View'/>
+  <Viewpoint position='-0.2 0 10.0' orientation='0.0 0.0 1.0 0.0' fieldOfView='1.3' description='Entry View'/>
     <WorldInfo title='BonesRightRadiusUlna.x3d'/>
-    <Transform DEF='DSkeletonParts' scale='0.029 0.029 0.029'>
+	
+	<!-- <Shape>
+		<Sphere radius='2.3'/>
+			<Appearance>
+			<Material diffuseColor='1.0 0.0 0.0'/>
+		</Appearance>
+	</Shape> -->
+		
+    <Transform DEF='DSkeletonParts' translation='7.8 -32.75 0.0'>
       <Group DEF='RightHumerus'>
         <!-- rradius rulna -->
+		
         <Shape DEF='rradius'>
           <Appearance>
             <Material ambientIntensity='1' diffuseColor='1 .9765 .8667' shininess='0.025' specularColor='.33 .33 .33'/>
