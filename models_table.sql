@@ -1,19 +1,19 @@
 --create table statement
 CREATE TABLE `models` (
-  `modelid` int(10) NOT NULL DEFAULT '0',
+  `id` int(10) NOT NULL DEFAULT '0',
   `name` varchar(50) DEFAULT NULL,
   `thumbnail` varchar(100) DEFAULT NULL,
   `adr` varchar(100) DEFAULT NULL,
   `x3d-loc` varchar(100) DEFAULT NULL,
   `type` varchar(12) DEFAULT NULL,
-  `disabled` boolean NOT NULL DEFAULT false,
-  PRIMARY KEY (`modelid`)
+  `disabled` varchar(6) NOT NULL DEFAULT 'false',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 --dump table data
 --changes to id numbers on this page must be applied to sources_table.sql as well 
-INSERT INTO `models` (`modelid`,`name`,`thumbnail`,`adr`,`x3d-loc`,`type`) VALUES
+INSERT INTO `models` (`id`,`name`,`thumbnail`,`adr`,`x3d-loc`,`type`) VALUES
  (0,"Brain","thumbnails/brain.png","modelpages/brain.php","x3d/Brain/Brain_nocompression.x3d","decomposable"),
  (1,"Skull","thumbnails/skull.png","modelpages/skull.php","x3d/Skull/skullAssembly_noscript.x3d","decomposable"),
  (2,"Body Skin","thumbnails/bodyskin.png","","x3d/BodySkin/BodySkinIndexedFaceSetNIST.x3d","basic"),

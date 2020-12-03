@@ -49,7 +49,7 @@ $db_handle = new DBController();
                                             <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'decomposable'");
                                                 if (!empty($product_array)) {
                                                     foreach($product_array as $key=>$value){
-                                                        if ($product_array [$key]["disabled"]==0){
+                                                        
                                                             ?><div class="cell">
                                                                 <div class="thumbnail">
                                                                     <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
@@ -64,7 +64,7 @@ $db_handle = new DBController();
                                                                 </div>
                                                             </div>
                                             <?php
-                                                        }
+                                                        
                                                     }
                                                 }
                                             ?>

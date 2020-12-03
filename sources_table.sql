@@ -6,7 +6,7 @@ CREATE TABLE `sources` (
   `source_adr` varchar(100) DEFAULT NULL,
   `date` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`sourceid`),
-  CONSTRAINT `FK_ModelsSources` FOREIGN KEY (`modelid`) REFERENCES `models`(`modelid`)
+  CONSTRAINT `FK_ModelsSources` FOREIGN KEY (`modelid`) REFERENCES `models`(`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --dump table data
