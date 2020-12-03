@@ -20,7 +20,7 @@ $db_handle = new DBController();
                             <table class="title" cellpadding="20">
                                 <tr>
                                     <td>
-                                        <center><h1>X3D Based Systems for Neuroanatomy Exploration and Medical Training</h1></center>
+                                        <center><h1>X3D Based Systems for Neuroanatomy Exploration and Medical Training</h1></center><h4 >Ver. 1.1</h4>
                                     </td>
                                 </tr>
                                 <tr>
