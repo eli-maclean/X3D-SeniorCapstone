@@ -2,7 +2,7 @@
 session_start();
 require_once("../dbcontroller.php");
 $db_handle = new DBController();
-$id = $_GET["id"];
+$id = $_GET["modelid"];
 $model_row = $db_handle->runQuery("SELECT * FROM models where id = $id");
 $mysqli = $db_handle->connectDB();
 ?>
@@ -56,15 +56,19 @@ $mysqli = $db_handle->connectDB();
                                                         <div class="dropdown-content">
                                                             <?php $dd_list = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
                                                                 if (!empty($dd_list)) {
-                                                                    foreach($dd_list as $key=>$value){?>
-                                                                        <div class="titlename">
-                                                                            <form action="basic2.php" method = "get">
-                                                                                <input type="hidden" name="id"  value="<?php echo $dd_list[$key]["id"]; ?>">
-                                                                                <input type="submit" value="<?php echo $dd_list[$key]["name"]; ?>">
-                                                                            </form>
-                                                                        </div><?php
-                                                                                        }
-                                                                                    }?>
+                                                                    foreach($dd_list as $key=>$value){
+                                                                        if($dd_list[$key]["disabled"] == 0){ ?>
+                                                                            <div class="titlename">
+                                                                                <form action="basic2.php" method = "get">
+                                                                                    <input type="hidden" name="modelid"  value="<?php echo $dd_list[$key]["modelid"]; ?>">
+                                                                                    <input type="submit" value="<?php echo $dd_list[$key]["name"]; ?>">
+                                                                                </form>
+                                                                            </div>
+                                                            <?php
+                                                                        }
+                                                                    }
+                                                                } 
+                                                            ?>
                                                         </div>
                                                     </div>
                                                 </td>

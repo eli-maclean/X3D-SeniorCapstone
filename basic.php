@@ -51,22 +51,24 @@ $db_handle = new DBController();
                                         <div class="allcategories">
                                             <?php $product_array = $db_handle->runQuery("SELECT * FROM models where type = 'basic'");
                                                 if (!empty($product_array)) {
-                                                    foreach($product_array as $key=>$value){                                                        
-                                                            ?><div class="cell">
+                                                    foreach($product_array as $key=>$value){
+                                                        if($product_array[$key]["disabled"] == 0){ ?> 
+                                                            <div class="cell">
                                                                 <div class="thumbnail">
                                                                     <img src="<?php echo $product_array[$key]["thumbnail"]; ?>">
                                                                 </div>
                                                                 <div class="titlename">
                                                                     <form action="modelpages/basic2.php" method = "get">
-                                                                        <input type="hidden" name="id"  value="<?php echo $product_array[$key]["id"]; ?>">
+                                                                        <input type="hidden" name="modelid"  value="<?php echo $product_array[$key]["modelid"]; ?>">
                                                                         <input type="submit" value="<?php echo $product_array[$key]["name"]; ?>">
                                                                     </form>
                                                                 </div>
                                                             </div>
-                                                                                    <?php
-                                                                                    }                                                                                     
-                                                                                }
-                                                                                ?>
+                                            <?php
+                                                        }
+                                                    }                                                                                     
+                                                } 
+                                            ?>
                                         </div>
                                     </tr>
                                 </table>
