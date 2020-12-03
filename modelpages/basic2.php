@@ -3,7 +3,8 @@ session_start();
 require_once("../dbcontroller.php");
 $db_handle = new DBController();
 $id = $_GET["id"];
-$model_row = $db_handle->runQuery("SELECT * FROM models where id = $id");
+$model_row = $db_handle->runQuery("SELECT * FROM models, sources where id = $id and models.id = sources.modelid");
+
 $mysqli = $db_handle->connectDB();
 ?>
 <html>
@@ -131,6 +132,15 @@ $mysqli = $db_handle->connectDB();
                                 </tr>
                             </table>
                         </center>
+                        <br/>
+                        <table>
+                            <tr>
+                                <th>Model Source Information</th>
+                                <td>Creator: <?php echo $model_row[0]["author"];?></td>
+                                <td>URL: <?php echo $model_row[0]["source_adr"];?></td>
+                                <td>Last Modified: <?php echo $model_row[0]["date"];?></td>
+                            </tr>    
+                        </table>
                         <br/>
                         <center>
                             <table class=title>

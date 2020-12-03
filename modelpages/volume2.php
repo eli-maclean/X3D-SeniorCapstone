@@ -130,6 +130,15 @@ $mysqli = $db_handle->connectDB();
                             </table>
                         </center>
                         <br/>
+                        <table>
+                            <tr>
+                                <th>Model Source Information</th>
+                                <td>Creator: <?php echo $model_row[0]["author"];?></td>
+                                <td>URL: <?php echo $model_row[0]["source_adr"];?></td>
+                                <td>Last Modified: <?php echo $model_row[0]["date"];?></td>
+                            </tr>    
+                        </table>
+                        <br/>
                         <center>
                             <table class=title>
                                 <tr>
